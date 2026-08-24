@@ -1,0 +1,111 @@
+﻿@page
+@model MyFirstWebsite.Pages.Shared.InformationTechnologiesModel
+@{
+    ViewData["Title"] = "Information Technologies Internship";
+}
+
+
+<div class="internship-details-container">
+
+    <!-- Hero Section -->
+    <div class="hero-content">
+        <h1>💼 Information Technologies Internship</h1>
+        <p class="project-subtitle">Arch of Sigma • TNC Group Şirketleri</p>
+
+        <div class="project-tags">
+            <span class="tech">Excel</span>
+            <span class="tech">AutoCAD</span>
+            <span class="tech">Python</span>
+            <span class="tech">Blender</span>
+        </div>
+      
+    </div>
+
+    <!-- Overview -->
+    <div class="detail-card visible">
+        <h2>📋 Overview</h2>
+        <p>
+            I successfully completed a comprehensive Information Technologies Internship 
+            organized by Arch of Sigma under TNC Group Şirketleri. 
+            The program provided hands-on training in multiple technical domains, 
+            combining software, design, and engineering skills.
+        </p>
+    </div>
+
+    <!-- Four Sub-Projects -->
+    <div class="info-grid">
+        <!-- Excel -->
+        <div class="detail-card visible">
+            <h2>💻 Excel</h2>
+            <img src="/image/Excel.png" alt="Excel Dashboard" class="gallery-img">
+            <p>
+                Built dashboards and reports using Pivot Tables, formulas, and charts
+                to analyze and visualize data effectively.
+            </p>
+            <a class="btn" href="/files/Excel Proje.xlsx" target="_blank">📊 View Excel File</a>
+        </div>
+
+        <!-- AutoCAD -->
+        <div class="detail-card visible">
+            <h2>📐 AutoCAD</h2>
+            <img src="/image/AutoCat.png" alt="AutoCAD Drawing" class="gallery-img">
+            <p>
+                Designed technical drawings and layouts with precision, applying
+                industry standards for architectural drafting.
+            </p>
+            <a class="btn" href="/files/Oda tasarımı.dwg" target="_blank">📐 View DWG File</a>
+        </div>
+
+        <!-- Python -->
+        <div class="detail-card visible">
+            <h2>🐍 Python</h2>
+            <img src="/image/Python.png" alt="Python Script" class="gallery-img">
+            <p>
+                Developed console applications and automation scripts, focusing on
+                modular design, error handling, and file I/O.
+            </p>
+            <a class="btn" href="https://colab.research.google.com/drive/1oZ1BHfwTC5sHpXvsEjRdASWWMlVjH_7E?usp=sharing" target="_blank">🐍 View Python Code</a>
+        </div>
+
+        <!-- Blender -->
+        <div class="detail-card visible">
+            <h2>🎨 Blender</h2>
+            <img src="/image/Nayroz_Abdalall_Render01 .png.png" alt="Blender 3D Model" class="gallery-img">
+            <p>
+                Created 3D models and isometric room designs, applying materials,
+                lighting, and rendering workflows.
+            </p>
+            <a class="btn" href="/files/Nayroz_Abdalall_IzometrikOda_v01 .blend.blend" target="_blank">🎨 Download Blender File</a>
+        </div>
+    </div>
+    <div class="hero-buttons">
+        <a asp-page="/Projects" class="btn">Back to Projects</a>
+    </div>
+
+
+
+   <!-- Footer -->
+    <div class="footer-contact">
+        <div class="footer-links">
+            <a href="https://github.com/nayrozsherif5-tech" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/nayroz" target="_blank">LinkedIn</a>
+            <a href="mailto:nayroz@example.com">Email</a>
+        </div>
+        <div class="footer">Built with ❤️ by Nayroz</div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const elements = document.querySelectorAll('.detail-card, .feature-card, .gallery-img');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        elements.forEach(el => observer.observe(el));
+    });
+</script>

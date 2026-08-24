@@ -1,0 +1,113 @@
+﻿@page
+@model MyFirstWebsite.Pages.YoloProjectModel
+
+@{
+    ViewData["Title"] = "YOLO Object Detection & Tracking";
+}
+
+
+
+<div class="project-details-container">
+
+    <!-- Hero Section -->
+    <img src="/image/YoloPic.png"
+         class="project-hero-image"
+         alt="YOLO Object Detection & Tracking" />
+
+    <div class="hero-content">
+        <h1>🎥 YOLO Object Detection & Tracking</h1>
+        <p class="project-subtitle">Computer Vision Project</p>
+
+        <div class="project-tags">
+            <span class="tech">Python</span>
+            <span class="tech">OpenCV</span>
+            <span class="tech">YOLO</span>
+            <span class="tech">Deep SORT</span>
+        </div>
+
+        <div class="hero-buttons">
+            <a class="btn" href="https://github.com/nayrozsherif5-tech/YoloProject" target="_blank">View Code</a>
+            <a asp-page="/Projects" class="btn">Back to Projects</a>
+        </div>
+    </div>
+</div>
+
+<!-- Overview -->
+<div class="detail-card">
+    <h2>📋 Overview</h2>
+    <p>
+        Developed a real-time object detection and tracking system using YOLO and OpenCV. 
+        The application detects objects from video streams and tracks them across frames 
+        using Deep SORT for multi-object tracking.
+    </p>
+</div>
+
+<!-- Problem & Solution -->
+<div class="info-grid">
+    <div class="detail-card">
+        <h2>🎯 Problem</h2>
+        <p>
+            Traditional object detection systems struggled with real-time performance and 
+            maintaining consistent tracking across frames.
+        </p>
+    </div>
+
+    <div class="detail-card">
+        <h2>💡 Solution</h2>
+        <p>
+            Implemented YOLO for fast detection and Deep SORT for robust tracking, 
+            achieving real-time performance with high accuracy.
+        </p>
+    </div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">✨ Key Features</h2>
+<div class="features-grid">
+    <div class="feature-card">⚡ Real-Time Detection <p>Processes video streams with minimal latency.</p></div>
+    <div class="feature-card">🎯 Multi-Object Tracking <p>Tracks multiple objects consistently across frames.</p></div>
+    <div class="feature-card">📊 Confidence Scores <p>Displays detection confidence for each object.</p></div>
+    <div class="feature-card">🖥️ Visualization <p>Bounding boxes and labels rendered directly on video.</p></div>
+</div>
+
+<!-- Gallery -->
+<div class="detail-card">
+    <h2>📸 Project Gallery</h2>
+    <div class="gallery">
+        <figure>
+            <img src="/image/YoloSC1.jpg" class="gallery-img" alt="YOLO detecting cars and people" />
+            <figcaption>Detection with bounding boxes and confidence scores</figcaption>
+        </figure>
+
+        
+    </div>
+</div>
+
+<!-- Footer Buttons -->
+<div class="project-buttons">
+    <a class="btn" href="https://github.com/nayrozsherif5-tech/YoloProject" target="_blank">View Code</a>
+    <a asp-page="/Projects" class="btn">Back to Projects</a>
+</div>
+
+<!-- Footer -->
+<div class="footer-contact">
+    <div class="footer-links">
+        <a href="https://github.com/nayrozsherif5-tech" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/nayroz" target="_blank">LinkedIn</a>
+        <a href="mailto:nayroz@example.com">Email</a>
+    </div>
+    <div class="footer">Built with ❤️ by Nayroz</div>
+</div>
+
+@section Scripts {
+<script>
+    document.addEventListener("scroll", function() {
+        document.querySelectorAll(".detail-card, .feature-card, .gallery-img").forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("visible");
+            }
+        });
+    });
+</script>
+}

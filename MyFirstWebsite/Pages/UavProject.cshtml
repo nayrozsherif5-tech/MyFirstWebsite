@@ -1,0 +1,106 @@
+﻿@page
+@model MyFirstWebsite.Pages.UavProjectModel
+@{
+    ViewData["Title"] = "Swarm UAV Project";
+}
+
+<div class="project-details-container">
+
+    <!-- Hero Section -->
+    <img src="/image/SwarmUAV.png"
+         class="project-hero-image"
+         alt="Swarm UAV Project" />
+
+    <div class="hero-content">
+        <h1>🛩️ Swarm UAV Project</h1>
+        <p class="project-subtitle">Aerospace Engineering Project</p>
+
+        <div class="project-tags">
+            <span class="tech">Fusion 360</span>
+            <span class="tech">UAV Design</span>
+            <span class="tech">Aerodynamics</span>
+            <span class="tech">Structural Integrity</span>
+        </div>
+
+        <div class="hero-buttons">
+            <a asp-page="/Projects" class="btn">Back to Projects</a>
+        </div>
+    </div>
+</div>
+
+<!-- Overview -->
+<div class="detail-card">
+    <h2>📋 Overview</h2>
+    <p>
+        Designed two UAV frames using Fusion 360 with a focus on aerodynamic efficiency
+        and structural integrity. This project was part of the Swarm UAV team,
+        exploring cooperative drone systems.
+    </p>
+</div>
+
+<!-- Problem & Solution -->
+<div class="info-grid">
+    <div class="detail-card">
+        <h2>🎯 Problem</h2>
+        <p>
+            UAV frames must balance aerodynamic performance with durability,
+            especially in swarm cooperation missions.
+        </p>
+    </div>
+
+    <div class="detail-card">
+        <h2>💡 Solution</h2>
+        <p>
+            Developed two frame designs: one optimized for aerodynamic efficiency,
+            and another for structural strength, both tested in simulation.
+        </p>
+    </div>
+</div>
+
+<!-- Gallery with Two Frames -->
+<h2 class="section-title">📸 Project Gallery</h2>
+<div class="uav-gallery">
+
+    <!-- Frame Design 1 -->
+    <figure class="uav-frame frame1-card">
+        <img src="/image/Frame1.jpg" alt="UAV Frame Design 1" />
+        <figcaption>Frame Design 1 – Aerodynamic Efficiency</figcaption>
+        <div class="project-buttons">
+            <a class="btn" href="https://gmail4751442.autodesk360.com/g/shares/SH286ddQT78850c0d8a46962730d491aabf4" target="_blank">View 3D Model</a>
+        </div>
+    </figure>
+
+    <!-- Frame Design 2 -->
+    <figure class="uav-frame frame2-card">
+        <img src="/image/Frame2.jpg" alt="UAV Frame Design 2" />
+        <figcaption>Frame Design 2 – Structural Integrity</figcaption>
+        <div class="project-buttons">
+            <a class="btn" href="https://gmail4751442.autodesk360.com/g/shares/SH286ddQT78850c0d8a4d40713cfd9068a7b" target="_blank">View 3D Model</a>
+        </div>
+    </figure>
+
+</div>
+
+
+<!-- Footer -->
+<div class="footer-contact">
+    <div class="footer-links">
+        <a href="https://github.com/nayrozsherif5-tech" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/nayroz" target="_blank">LinkedIn</a>
+        <a href="mailto:nayroz@example.com">Email</a>
+    </div>
+    <div class="footer">Built with ❤️ by Nayroz</div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("scroll", function() {
+            document.querySelectorAll(".detail-card, .gallery-item, .gallery-img").forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+    </script>
+}

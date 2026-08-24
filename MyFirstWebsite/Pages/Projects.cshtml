@@ -1,0 +1,221 @@
+﻿@page
+@model MyFirstWebsite.Pages.ProjectsModel
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<div class="projects-container">
+
+    <h1 class="page-title">🚀 My Projects</h1>
+    <p class="projects-subtitle">
+        A collection of AI, Computer Vision, and Web Development projects.
+    </p>
+
+    <!-- 1 project chatbot -->
+
+    <div class="project-card visible">
+
+            <img src="/image/FaqChatbot.png"
+             class="project-image"
+             alt="AI FAQ Chatbot Screenshot">
+
+
+        <h3>🤖 AI FAQ Chatbot</h3>
+
+        <p class="project-type">
+            Artificial Intelligence Project
+        </p>
+
+        <div class="project-tags">
+            <span class="tech">Python</span>
+            <span class="tech">NLP</span>
+            <span class="tech">Scikit-Learn</span>
+        </div>
+
+        <p class="project-description">
+            Developed an intelligent FAQ chatbot using Natural
+            Language Processing and cosine similarity to provide
+            relevant responses to user questions.
+        </p>
+
+        <div class="project-buttons">
+
+            <a class="btn"
+               href="https://github.com/nayrozsherif5-tech/CodeAlpha_ChatbotFAQ"
+               target="_blank">
+                View Code
+            </a>
+
+            <a class="btn" asp-page="/FaqChatbot">
+                Project Details
+            </a>
+
+        </div>
+    </div>
+    <!-- 2 project YOLO -->
+
+    <div class="project-card">
+
+        <img src="/image/ObjectDetection.png"
+             alt="Object Detection and Tracking"
+             class="project-image" />
+
+        <h3>👁 YOLO Object Detection & Tracking</h3>
+
+        <p class="project-type">
+            Computer Vision Project
+        </p>
+        
+        <div class="project-tags">
+            <span class="tech">Python</span>
+            <span class="tech">OpenCV</span>
+            <span class="tech">YOLO</span>
+            <span class="tech">Deep SORT</span>
+        </div>
+
+        <p class="project-description">
+            Developed a real-time object detection and tracking system
+            using YOLO and OpenCV. The application detects objects from
+            video streams and tracks them across frames using object
+            tracking algorithms.
+        </p>
+
+        <div class="project-buttons">
+
+
+            <a class="btn"
+               href="https://github.com/nayrozsherif5-tech/CodeAlpha_ObjectDetectionTracking"
+               target="_blank">
+                View Code
+            </a>
+
+            <a class="btn" asp-page="/YoloProject" >
+                Project Details
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- 3 project UAV -->
+
+    <div class="project-card">
+
+        <img src="/image/SwarmUAV.png"
+             alt="Object Detection and Tracking"
+             class="project-image" />
+
+        <h3>🚁 Swarm UAV Project</h3>
+        
+        <p class="project-type">
+            Aerospace Engineering Project
+        </p>
+
+        <div class="project-tags">
+            <span class="tech">Fusion 360</span>
+            <span class="tech">UAV Design</span>
+         
+        </div>
+
+        <p class="project-description">
+            Designed two drone frames using Fusion 360 with a focus on
+            aerodynamic efficiency and structural integrity as part of
+            the Swarm UAV team.
+        </p>
+
+        <div class="project-buttons">
+
+
+            <a class="btn" asp-page="/UavProject">
+                Project Details
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- 4 project My Website -->
+
+    <div class="project-card">
+
+        <img src="/image/PortfolioWebsite.png"
+             alt="Technical Training Project"
+             class="project-image" />
+        <h3>🌐 Personal Portfolio Website</h3>
+
+        <p class="project-type">
+            Web Development Project
+        </p>
+
+        <div class="project-tags">
+            <span class="tech">ASP.NET Core</span>
+            <span class="tech">Razor Pages</span>
+            <span class="tech">HTML</span>
+            <span class="tech">CSS</span>
+            <span class="tech">Bootstrap</span>
+        </div>
+
+        <p class="project-description">
+            Designed and developed a responsive personal portfolio website
+            to showcase projects, certifications, references, technical
+            skills, internships, and professional experience using
+            ASP.NET Core Razor Pages.
+        </p>
+
+
+    </div>
+
+    <!-- 5 project Traing -->
+
+    <div class="project-card">
+
+        <img src="/image/technical.png"
+             alt="Technical Training Project"
+             class="project-image" />
+
+        <h3>🏢 Technical Design & Analysis Projects</h3>
+
+    <p class="project-type">
+        Technical Training Project
+    </p>
+
+    <div class="project-tags">
+        <span class="tech">Excel</span>
+        <span class="tech">Python</span>
+        <span class="tech">AutoCAD</span>
+        <span class="tech">Blender</span>
+    </div>
+
+    <p class="project-description">
+            Completed practical engineering and technical projects,
+            including Excel data analysis, Python programming
+            fundamentals, 3D room design in AutoCAD, and
+            3D environment modeling in Blender.
+    </p>
+    <div class="project-buttons">
+
+
+            <a class="btn" asp-page="/InformationTechnologies">
+            Project Details
+        </a>
+
+    </div>
+    </div>
+
+   
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("scroll", function() {
+            document.querySelectorAll(".project-card").forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+    </script>
+}
+
