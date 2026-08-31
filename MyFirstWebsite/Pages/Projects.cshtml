@@ -11,10 +11,15 @@
         A collection of AI, Computer Vision, and Web Development projects.
     </p>
 
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="cv">Computer Vision</button>
+        <button class="filter-btn" data-filter="eng">Engineering</button>
+    </div>
     <!-- 1 project chatbot -->
 
-    <div class="project-card visible">
-
+    <div class="project-card visible" data-category="ai">
             <img src="/image/FaqChatbot.png"
              class="project-image"
              alt="AI FAQ Chatbot Screenshot">
@@ -54,7 +59,7 @@
     </div>
     <!-- 2 project YOLO -->
 
-    <div class="project-card">
+    <div class="project-card" data-category="cv">
 
         <img src="/image/ObjectDetection.png"
              alt="Object Detection and Tracking"
@@ -100,7 +105,7 @@
 
     <!-- 3 project UAV -->
 
-    <div class="project-card">
+    <div class="project-card" data-category="eng">
 
         <img src="/image/SwarmUAV.png"
              alt="Object Detection and Tracking"
@@ -137,7 +142,7 @@
 
     <!-- 4 project My Website -->
 
-    <div class="project-card">
+    <div class="project-card" data-category="eng">
 
         <img src="/image/PortfolioWebsite.png"
              alt="Technical Training Project"
@@ -168,7 +173,7 @@
 
     <!-- 5 project Traing -->
 
-    <div class="project-card">
+    <div class="project-card" data-category="eng">
 
         <img src="/image/technical.png"
              alt="Technical Training Project"
@@ -218,4 +223,28 @@
         });
     </script>
 }
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.dataset.filter;
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
 

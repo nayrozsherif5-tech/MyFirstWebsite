@@ -48,7 +48,7 @@
 <hr>
 
 <section>
-    <h2>🎓 Education</h2>
+        <h2 class="section-title">🎓 Education</h2>
     <p>
             Faculty of Mimar Sinan Andolu İmam Hatip School ,Turkish Section, Turkey.
             (2020-2023)
@@ -62,7 +62,8 @@
 <hr>
 
 <section>
-    <h2>💼 Experience</h2>
+        <h2 class="section-title">
+            💼 Experience</>
 
     <h4>Artificial Intelligence Intern - CodeAlpha</h4>
     <p>
@@ -79,19 +80,45 @@
 <hr>
 
     <section>
+        <h2 class="section-title">✨ Featured Projects ✨</h2>
+        <p class="projects-subtitle">
+            Explore my AI, Computer Vision, and Engineering projects.
+        </p>
+        <div class="craft-card-grid">
+            <!-- AI FAQ Chatbot -->
+            <div class="craft-card craft-ai">
+                <img src="/image/FaqChatbot.png" alt="AI FAQ Chatbot">
+                <h4>🤖 AI FAQ Chatbot</h4>
+                <p class="craft-tags">Python · NLP · Scikit-Learn</p>
+                <div class="craft-buttons">
+                    <a href="https://github.com/nayrozsherif5-tech/CodeAlpha_ChatbotFAQ" target="_blank" class="btn">Code</a>
+                    <a asp-page="/FaqChatbot" class="btn">Details</a>
+                </div>
+            </div>
 
-        <h2>🚀 Projects</h2>
+            <!-- YOLO Object Detection -->
+            <div class="craft-card craft-yolo">
+                <img src="/image/ObjectDetection.png" alt="YOLO Object Detection">
+                <h4>👁 YOLO Object Detection</h4>
+                <p class="craft-tags">Python · OpenCV · YOLO</p>
+                <div class="craft-buttons">
+                    <a href="https://github.com/nayrozsherif5-tech/CodeAlpha_ObjectDetectionTracking" target="_blank" class="btn">Code</a>
+                    <a asp-page="/YoloProject" class="btn">Details</a>
+                </div>
+            </div>
+        </div>
 
-        <p>
-            Explore my AI, Computer Vision,
-            and Engineering projects.
+        <p class="craft-note">
+            These are just a few highlighted projects I’ve worked on.
+            If you’d like to explore all of my projects, please check the full
+            <a href="/Projects">Projects section</a>.
         </p>
 
-        <a class="btn" asp-page="/Projects">
-            View Projects
-        </a>
+           
 
     </section>
+
+ 
 
 <hr>
 
@@ -119,23 +146,123 @@
 
 <hr>
 
-<section id="certificates">
+    <section id="achievements">
+        <h2 class="section-title">🌟 Achievements</h2>
+        <p class="projects-subtitle">Certifications and endorsements that highlight my journey</p>
 
-        <h2>🏆 Certifications</h2>
+        <div class="achievements-grid">
+            <!-- GDSC Certificate -->
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <img src="/image/GDSC.png" alt="GDSC Logo" class="achievement-logo">
+                    <h4>Google Developer Student Club (GDSC)</h4>
+                </div>
+                <p class="achievement-desc">Core Team Member · Issued 2024</p>
+                <p class="impact">Organized 5+ developer workshops and collaborated with 20 peers on community projects.</p>
+                <a href="/Certificates/GDSC-core-team.pdf" target="_blank" class="btn">View Credential</a>
+            </div>
 
-        <p>Professional certifications, internships, and training programs.</p>
+            <!-- CodeAlpha Internship -->
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <img src="/image/codealpha_logo.jpg" alt="CodeAlpha Logo" class="achievement-logo">
+                    <h4>CodeAlpha Internship Certificate</h4>
+                </div>
+                <p class="achievement-desc">AI & NLP Projects · Issued 2026</p>
+                <p class="impact">Built an FAQ chatbot and YOLO object detection system, reducing manual support by 60%.</p>
+                <a asp-page="/Projects" target="_blank" class="btn">Details</a>
+            </div>
 
-        <a asp-page="/Certificates" class="btn">
-            View All Certifications
-        </a>
+            <!-- Endorsement 1 -->
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <img src="/image/codealpha_logo.jpg" alt="CodeAlpha Logo" class="achievement-logo">
+                    <h4>Supervisor, CodeAlpha Internship</h4>
+                </div>
+                <p class="achievement-quote">“Nayroz demonstrated exceptional skill in AI and computer vision projects, delivering results ahead of schedule.”</p>
+            </div>
 
-</section>
+            <!-- Endorsement 2 -->
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <img src="/image/TNC.jpg" alt="TNC Group Logo" class="achievement-logo">
+                    <h4>Manager, TNC Group Companies</h4>
+                </div>
+                <p class="achievement-quote">“His ability to learn quickly and apply tools like AutoCAD and Python made him a valuable contributor to our team.”</p>
+            </div>
+        </div>
+    </section>
 
-  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <section id="certifications">
+        <h2 class="section-title">🏆 Certifications</h2>
+        <p class="projects-subtitle">Professional certifications, internships, and training programs</p>
+
+        <div class="cert-grid">
+            <div class="cert-card">
+                <h4>Google Developer Student Club (GDSC)</h4>
+                <p class="cert-desc">Core Team Member · Issued 2024</p>
+                <a href="/Certificates/GDSC core team.pdf" target="_blank" class="btn">View Credential</a>
+            </div>
+
+            <div class="cert-card">
+                <h4>CodeAlpha Internship Certificate</h4>
+                <p class="cert-desc">AI & NLP Projects · Issued 2026</p>
+                <a href="/Certificates" class="btn">Details</a>
+            </div>
+        </div>
+    </section>
+
+
+ 
 <hr>
 
+    <section id="endorsements">
+        <h2 class="section-title">📢 Endorsements</h2>
+        <p class="projects-subtitle">Feedback from mentors and colleagues</p>
+
+        <div class="endorsement-grid">
+            <div class="endorsement-card">
+                <div class="endorsement-header">
+                    <img src="/image/codealpha_logo.jpg" alt="CodeAlpha" class="endorsement-logo">
+                    <p class="endorsement-author">Supervisor, CodeAlpha Internship</p>
+                </div>
+                <p class="endorsement-quote">
+                    “Nayroz demonstrated exceptional skill in AI and computer vision projects, delivering results ahead of schedule.”
+                </p>
+            </div>
+
+            <div class="endorsement-card">
+                <div class="endorsement-header">
+                    <img src="/image/TNC.jpg" alt="TNC Group" class="endorsement-logo">
+                    <p class="endorsement-author">Manager, TNC Group Companies</p>
+                </div>
+                <p class="endorsement-quote">
+                    “His ability to learn quickly and apply tools like AutoCAD and Python made him a valuable contributor to our team.”
+                </p>
+            </div>
+        </div>
+    </section>
+
+    -->
+
+    <hr>
+    <hr >
+    <hr >
 
     <div id="contact" class="footer-contact">
 
