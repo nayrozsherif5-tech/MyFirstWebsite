@@ -1,0 +1,98 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.References.CreateModel
+
+@{
+    ViewData["Title"] = "Add Reference";
+}
+
+<div class="admin-form-page">
+
+    <div class="admin-form-header">
+        <h1>➕ Add Reference</h1>
+        <p>Add a new professional reference to your portfolio.</p>
+    </div>
+
+    <div class="admin-form-card">
+
+        <form method="post" enctype="multipart/form-data">
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger"></div>
+
+            <div class="admin-form-group">
+                <label asp-for="Reference.Title">
+                    Reference Title
+                </label>
+
+                <input asp-for="Reference.Title"
+                       class="admin-form-control"
+                       placeholder="Enter reference title" />
+
+                <span asp-validation-for="Reference.Title"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="admin-form-group">
+                <label asp-for="Reference.Description">
+                    Description
+                </label>
+
+                <textarea asp-for="Reference.Description"
+                          class="admin-form-control admin-textarea"
+                          placeholder="Enter reference description"></textarea>
+
+                <span asp-validation-for="Reference.Description"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="admin-form-group">
+                <label>
+                    Reference File
+                </label>
+
+                <input asp-for="ReferenceFile"
+                       type="file"
+                       class="admin-form-control admin-file-input"
+                       accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx" />
+
+                <small class="admin-form-help">
+                    Accepted: PDF, Word, JPG, PNG and WEBP.
+                </small>
+            </div>
+
+            <div class="admin-form-group">
+
+                <label asp-for="Reference.ReferenceLink">
+                    External Reference Link
+                    <span class="optional-text">(Optional)</span>
+                </label>
+
+                <input asp-for="Reference.ReferenceLink"
+                       class="admin-form-control"
+                       placeholder="https://..." />
+
+                <small class="admin-form-help">
+                    Leave this empty if you uploaded the reference file.
+                </small>
+
+            </div>
+
+            <div class="admin-form-actions">
+
+                <button type="submit"
+                        class="admin-save-btn">
+                    ➕ Add Reference
+                </button>
+
+                <a asp-page="Index"
+                   class="admin-cancel-btn">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

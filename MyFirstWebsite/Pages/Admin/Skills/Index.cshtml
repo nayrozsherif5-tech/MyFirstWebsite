@@ -1,0 +1,80 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.Skills.IndexModel
+
+@{
+    ViewData["Title"] = "Manage Skills";
+}
+
+<div class="admin-references-page">
+
+    <div class="admin-page-header">
+
+        <div>
+            <h1>💻 Manage Skills</h1>
+            <p>Add, edit, and delete your technical skills.</p>
+        </div>
+
+        <a asp-page="Create" class="admin-add-btn">
+            + Add Skill
+        </a>
+
+    </div>
+
+    @if (Model.Skills.Count == 0)
+    {
+        <div class="admin-empty-state">
+            <h3>No skills yet</h3>
+            <p>Add your first skill using the button above.</p>
+        </div>
+    }
+    else
+    {
+        <div class="admin-references-list">
+
+            @foreach (var skill in Model.Skills)
+            {
+                <div class="admin-reference-card">
+
+                    <div class="admin-reference-main">
+
+                        <div class="admin-reference-icon">
+                            💻
+                        </div>
+
+                        <div class="admin-reference-content">
+
+                            <h2>@skill.Name</h2>
+
+                            <p>
+                                Category: @skill.Category
+                            </p>
+
+                           
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-reference-actions">
+
+                        <a asp-page="Edit"
+                           asp-route-id="@skill.Id"
+                           class="reference-action-btn reference-edit-btn">
+                            ✏️ Edit
+                        </a>
+
+                        <a asp-page="Delete"
+                           asp-route-id="@skill.Id"
+                           class="reference-action-btn reference-delete-btn">
+                            🗑 Delete
+                        </a>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    }
+
+</div>

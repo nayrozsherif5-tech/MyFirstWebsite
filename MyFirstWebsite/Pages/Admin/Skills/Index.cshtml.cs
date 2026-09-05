@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MyFirstWebsite.Data;
 using MyFirstWebsite.Models;
 
-namespace MyFirstWebsite.Pages
+namespace MyFirstWebsite.Pages.Admin.Skills
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;
@@ -18,27 +20,10 @@ namespace MyFirstWebsite.Pages
 
         public async Task OnGetAsync()
         {
-            var order = new List<string>
-    {
-        "C",
-        "C++",
-        "C#",
-        "Python",
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "MATLAB",
-        "Fusion 360",
-        "AutoCAD",
-        "Blender",
-        "ASP.NET"
-    };
-
-            Skills = await _context.Skills.ToListAsync();
-
-            Skills = Skills
-                .OrderBy(s => order.IndexOf(s.Name))
-                .ToList();
+            Skills = await _context.Skills
+                .OrderBy(s => s.Category)
+                .ThenBy(s => s.Name)
+                .ToListAsync();
         }
     }
 }

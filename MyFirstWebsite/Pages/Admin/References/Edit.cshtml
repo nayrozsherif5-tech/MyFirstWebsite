@@ -1,0 +1,80 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.References.EditModel
+
+@{
+    ViewData["Title"] = "Edit Reference";
+}
+
+<div class="admin-form-page">
+
+    <div class="admin-form-header">
+        <h1>✏️ Edit Reference</h1>
+        <p>Update your professional reference.</p>
+    </div>
+
+    <form method="post"
+          enctype="multipart/form-data"
+          class="admin-form-card">
+
+        <input type="hidden" asp-for="Reference.Id" />
+
+        <div class="form-group">
+            <label asp-for="Reference.Title">Reference Title</label>
+            <input asp-for="Reference.Title" />
+            <span asp-validation-for="Reference.Title"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Reference.Description">Description</label>
+            <textarea asp-for="Reference.Description" rows="5"></textarea>
+            <span asp-validation-for="Reference.Description"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Replace Reference File</label>
+
+            <input asp-for="ReferenceFile"
+                   type="file"
+                   accept=".pdf,.jpg,.jpeg,.png,.webp" />
+
+            <small>Leave this empty to keep the current file.</small>
+        </div>
+
+        @if (!string.IsNullOrWhiteSpace(Model.Reference.FilePath))
+        {
+            <div class="current-file">
+                <span>📄 Current Reference</span>
+
+                <a href="@Model.Reference.FilePath"
+                   target="_blank">
+                    👁 View File
+                </a>
+            </div>
+        }
+
+        <div class="form-group">
+            <label asp-for="Reference.ReferenceLink">
+                External Reference Link
+            </label>
+
+            <input asp-for="Reference.ReferenceLink"
+                   placeholder="https://..." />
+
+            <small>Optional</small>
+        </div>
+
+        <div class="form-actions">
+
+            <button type="submit" class="btn">
+                💾 Save Changes
+            </button>
+
+            <a asp-page="Index" class="btn">
+                Cancel
+            </a>
+
+        </div>
+
+    </form>
+
+</div>

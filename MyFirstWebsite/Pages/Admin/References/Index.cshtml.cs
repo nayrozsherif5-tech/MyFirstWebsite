@@ -1,15 +1,17 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MyFirstWebsite.Data;
 using MyFirstWebsite.Models;
 
-namespace MyFirstWebsite.Pages
+namespace MyFirstWebsite.Pages.Admin.References
 {
-    public class ReferencesModel : PageModel
+    [Authorize]
+    public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public ReferencesModel(ApplicationDbContext context)
+        public IndexModel(ApplicationDbContext context)
         {
             _context = context;
         }

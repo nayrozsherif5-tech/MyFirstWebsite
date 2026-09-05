@@ -3242,3 +3242,242 @@ textarea.valid {
             text-shadow: none;
         }
 }
+
+/* ================================
+   EDIT REFERENCE PAGE
+================================ */
+
+.admin-form-page {
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.admin-form-header {
+    margin-bottom: 25px;
+}
+
+    .admin-form-header h1 {
+        font-size: 2.3rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .admin-form-header p {
+        color: #b8c8dc;
+        margin: 0;
+    }
+
+.admin-form-card {
+    background: #173f68;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 8px;
+        border: 1px solid #45617e;
+        background: #0c2d50;
+        color: white;
+        outline: none;
+    }
+
+    .form-group textarea {
+        min-height: 130px;
+        resize: vertical;
+    }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+        }
+
+    .form-group small {
+        display: block;
+        margin-top: 7px;
+        color: #a9bdd1;
+    }
+
+.current-file {
+    background: #0d2d50;
+    border: 1px solid #2f5d87;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+    .current-file a {
+        color: #66ccff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .current-file a:hover {
+            text-decoration: underline;
+        }
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+    .form-actions .btn {
+        padding: 10px 20px;
+    }
+
+@media (max-width: 768px) {
+
+    .admin-form-page {
+        margin: 30px auto;
+    }
+
+    .admin-form-card {
+        padding: 22px;
+    }
+
+    .current-file {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+        .form-actions .btn {
+            width: 100%;
+            text-align: center;
+        }
+}
+
+/* ================================
+   ADMIN REFERENCES
+================================ */
+
+.admin-references-page {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.admin-references-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.admin-reference-card {
+    background: #173f68;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    padding: 26px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+    transition: 0.25s ease;
+}
+
+    .admin-reference-card:hover {
+        transform: translateY(-4px);
+        border-color: #38bdf8;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    }
+
+.admin-reference-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    flex: 1;
+}
+
+.admin-reference-icon {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.admin-reference-content h2 {
+    margin: 0 0 10px;
+    color: #55c2ff;
+    font-size: 25px;
+}
+
+.admin-reference-content p {
+    margin: 0;
+    color: #dce8f5;
+    line-height: 1.6;
+}
+
+.admin-reference-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.reference-action-btn {
+    min-width: 95px;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 9px;
+    text-decoration: none !important;
+    font-weight: 600;
+    color: white !important;
+    transition: 0.2s ease;
+}
+
+.reference-view-btn {
+    background: #2fa4dc;
+}
+
+.reference-edit-btn {
+    background: #f0ad3d;
+    color: #162235 !important;
+}
+
+.reference-delete-btn {
+    background: #dc3545;
+}
+
+.reference-action-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+@media (max-width: 768px) {
+
+    .admin-reference-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-reference-actions {
+        justify-content: flex-start;
+    }
+
+    .reference-action-btn {
+        flex: 1;
+    }
+}

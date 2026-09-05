@@ -122,27 +122,20 @@
 
 <hr>
 
-<section>
-    <h2>🛠 Technical Skills</h2>
+    <section>
+        <h2>🛠 Technical Skills</h2>
 
-    <div class="skills">
+        <div class="skills">
 
-        <span class="skill">C</span>
-        <span class="skill">C++</span>
-        <span class="skill">C#</span>
-        <span class="skill">Python</span>
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">MATLAB</span>
-        <span class="skill">Fusion 360</span>
-        <span class="skill">AutoCAD</span>
-        <span class="skill">Blender</span>
-        <span class="skill">ASP.NET</span>
+            @foreach (var skill in Model.Skills)
+            {
+                <span class="skill">
+                    @skill.Name
+                </span>
+            }
 
-    </div>
-   
-</section>
+        </div>
+    </section>
 
 <hr>
 

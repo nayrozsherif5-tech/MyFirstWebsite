@@ -1,37 +1,44 @@
 ﻿@page
 @model MyFirstWebsite.Pages.ReferencesModel
+
 @{
     ViewData["Title"] = "References";
 }
 
 <h1>📄 References</h1>
 
-<div class="card">
+@if (Model.References.Count == 0)
+{
+    <p>No references available yet.</p>
+}
+else
+{
+    @foreach (var reference in Model.References)
+    {
+        <div class="card">
 
-    <h3>TNC Reference Letter</h3>
+            <h3>@reference.Title</h3>
 
-    <p>
-        Reference provided by TNC Group Companies.
-    </p>
+            <p>@reference.Description</p>
 
-    <a class="btn" href="/References/TNC- Reference letter.pdf">
-        📄 View Reference
-    </a>
+            @if (!string.IsNullOrWhiteSpace(reference.FilePath))
+            {
+                <a class="btn"
+                   href="@reference.FilePath"
+                   target="_blank">
+                    📄 View Reference
+                </a>
+            }
+            else if (!string.IsNullOrWhiteSpace(reference.ReferenceLink))
+            {
+                <a class="btn"
+                   href="@reference.ReferenceLink"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    🔗 View Reference
+                </a>
+            }
 
-</div>
-
-
-<div class="card">
-
-    <h3>CodeAlpha Reference Letter</h3>
-
-    <p>
-        Reference provided by CodeAlpha Internship Program.
-    </p>
-
-    <a class="btn" href="/References/CodeAlpha - Reference letter.pdf">
-    📄 View Reference
-    </a>
-
-</div>
-
+        </div>
+    }
+}

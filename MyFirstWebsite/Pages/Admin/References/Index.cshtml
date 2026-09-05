@@ -1,0 +1,95 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.References.IndexModel
+
+@{
+    ViewData["Title"] = "Manage References";
+}
+
+<div class="admin-references-page">
+
+    <div class="admin-page-header">
+
+        <div>
+            <h1>🔗 Manage References</h1>
+            <p>Add, edit, and delete your professional references.</p>
+        </div>
+
+        <a asp-page="Create" class="admin-add-btn">
+            + Add Reference
+        </a>
+
+    </div>
+
+    @if (Model.References.Count == 0)
+    {
+        <div class="admin-empty-state">
+            <h3>No references yet</h3>
+            <p>Add your first reference using the button above.</p>
+        </div>
+    }
+    else
+    {
+        <div class="admin-references-list">
+
+            @foreach (var reference in Model.References)
+            {
+                <div class="admin-reference-card">
+
+                    <div class="admin-reference-main">
+
+                        <div class="admin-reference-icon">
+                            📄
+                        </div>
+
+                        <div class="admin-reference-content">
+
+                            <h2>@reference.Title</h2>
+
+                            <p>
+                                @reference.Description
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-reference-actions">
+
+                        @if (!string.IsNullOrWhiteSpace(reference.FilePath))
+                        {
+                            <a href="@reference.FilePath"
+                               target="_blank"
+                               class="reference-action-btn reference-view-btn">
+                                👁 View
+                            </a>
+                        }
+                        else if (!string.IsNullOrWhiteSpace(reference.ReferenceLink))
+                        {
+                            <a href="@reference.ReferenceLink"
+                               target="_blank"
+                               class="reference-action-btn reference-view-btn">
+                                👁 View
+                            </a>
+                        }
+
+                        <a asp-page="Edit"
+                           asp-route-id="@reference.Id"
+                           class="reference-action-btn reference-edit-btn">
+                            ✏️ Edit
+                        </a>
+
+                        <a asp-page="Delete"
+                           asp-route-id="@reference.Id"
+                           class="reference-action-btn reference-delete-btn">
+                            🗑 Delete
+                        </a>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    }
+
+</div>

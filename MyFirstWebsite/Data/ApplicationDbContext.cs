@@ -14,5 +14,9 @@ namespace MyFirstWebsite.Data
         public DbSet<ContactMessage> ContactMessages { get; set; }
 
         public DbSet<Certificate> Certificates { get; set; }
+
+        public DbSet<Reference> References { get; set; }
+
+        public DbSet<Skill> Skills { get; set; }
     }
 }
