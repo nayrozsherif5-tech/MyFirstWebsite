@@ -1,0 +1,158 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.Certificates.EditModel
+
+@{
+    ViewData["Title"] = "Edit Certificate";
+}
+
+<div class="admin-form-page">
+
+    <div class="admin-form-header">
+        <div>
+            <h1>✏️ Edit Certificate</h1>
+            <p>Update certificate information or replace the credential file.</p>
+        </div>
+    </div>
+
+    <div class="admin-form-card">
+
+        <form method="post" enctype="multipart/form-data">
+
+            <input type="hidden" asp-for="Certificate.Id" />
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger"></div>
+
+            <!-- Title -->
+            <div class="admin-form-group">
+                <label asp-for="Certificate.Title">
+                    Certificate Title
+                </label>
+
+                <input asp-for="Certificate.Title"
+                       class="admin-form-control"
+                       placeholder="Enter certificate title" />
+
+                <span asp-validation-for="Certificate.Title"
+                      class="text-danger"></span>
+            </div>
+
+            <!-- Organization -->
+            <div class="admin-form-group">
+                <label asp-for="Certificate.Organization">
+                    Organization
+                </label>
+
+                <input asp-for="Certificate.Organization"
+                       class="admin-form-control"
+                       placeholder="Enter organization name" />
+
+                <span asp-validation-for="Certificate.Organization"
+                      class="text-danger"></span>
+            </div>
+
+            <!-- Description -->
+            <div class="admin-form-group">
+                <label asp-for="Certificate.Description">
+                    Description
+                </label>
+
+                <textarea asp-for="Certificate.Description"
+                          class="admin-form-control admin-textarea"
+                          placeholder="Enter certificate description"></textarea>
+
+                <span asp-validation-for="Certificate.Description"
+                      class="text-danger"></span>
+            </div>
+
+            <!-- Date -->
+            <div class="admin-form-group">
+                <label asp-for="Certificate.Date">
+                    Date
+                </label>
+
+                <input asp-for="Certificate.Date"
+                       type="date"
+                       class="admin-form-control" />
+
+                <span asp-validation-for="Certificate.Date"
+                      class="text-danger"></span>
+            </div>
+
+            <!-- File -->
+            <div class="admin-form-group">
+                <label>
+                    Replace Credential File
+                </label>
+
+                <input asp-for="ImageFile"
+                       type="file"
+                       class="admin-form-control admin-file-input"
+                       accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx" />
+
+                <small class="admin-form-help">
+                    Leave this empty if you want to keep the current file.
+                </small>
+            </div>
+
+            <!-- Current File -->
+            @if (!string.IsNullOrWhiteSpace(Model.Certificate.ImagePath))
+            {
+                <div class="current-file-box">
+
+                    <div>
+                        <span class="current-file-icon">📄</span>
+
+                        <div>
+                            <strong>Current Credential</strong>
+                            <p>Your existing certificate file</p>
+                        </div>
+                    </div>
+
+                    <a href="@Model.Certificate.ImagePath"
+                       target="_blank"
+                       class="current-file-btn">
+                        👁 View File
+                    </a>
+
+                </div>
+            }
+
+            <!-- External Link -->
+            <div class="admin-form-group">
+
+                <label asp-for="Certificate.CertificateLink">
+                    External Certificate Link
+                    <span class="optional-text">(Optional)</span>
+                </label>
+
+                <input asp-for="Certificate.CertificateLink"
+                       class="admin-form-control"
+                       placeholder="https://..." />
+
+                <small class="admin-form-help">
+                    Only use this if your certificate has an external credential URL.
+                </small>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="admin-form-actions">
+
+                <button type="submit"
+                        class="admin-save-btn">
+                    💾 Save Changes
+                </button>
+
+                <a asp-page="Index"
+                   class="admin-cancel-btn">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

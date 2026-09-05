@@ -1,15 +1,17 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MyFirstWebsite.Data;
 using MyFirstWebsite.Models;
 
-namespace MyFirstWebsite.Pages
+namespace MyFirstWebsite.Pages.Admin.Certificates
 {
-    public class CertificatesModel : PageModel
+    [Authorize]
+    public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public CertificatesModel(ApplicationDbContext context)
+        public IndexModel(ApplicationDbContext context)
         {
             _context = context;
         }

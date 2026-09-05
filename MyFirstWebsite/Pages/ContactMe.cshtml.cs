@@ -1,16 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using MyFirstWebsite.Data;
+using MyFirstWebsite.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyFirstWebsite.Pages
 {
     public class ContactMeModel : PageModel
     {
-        public int Id { get; set; }
+        private readonly ApplicationDbContext _context;
+
+        public ContactMeModel(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         [BindProperty, Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        [BindProperty, Required(ErrorMessage = "Email is required"), EmailAddress(ErrorMessage = "Invalid email format")]
+        [BindProperty, Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email format")]
         public string Email { get; set; }
 
         [BindProperty, Required(ErrorMessage = "Subject is required")]
@@ -23,10 +32,20 @@ namespace MyFirstWebsite.Pages
         {
             if (!ModelState.IsValid)
             {
-                return Page(); // redisplay with validation errors
+                return Page();
             }
 
-            // TODO: later add email sending or database saving here
+            var contactMessage = new ContactMessage
+            {
+                Name = Name,
+                Email = Email,
+                Subject = Subject,
+                Message = Message,
+                CreatedAt = DateTime.Now
+            };
+
+            _context.ContactMessages.Add(contactMessage);
+            _context.SaveChanges();
 
             return RedirectToPage("/MessageSent");
         }

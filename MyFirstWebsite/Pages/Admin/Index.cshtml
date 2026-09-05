@@ -1,0 +1,105 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.IndexModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="admin-dashboard">
+
+    <div class="admin-dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <p>Manage your portfolio content from here.</p>
+    </div>
+
+    <div class="admin-cards">
+
+        <!-- Messages -->
+        <a asp-page="/Admin/Messages/Index" class="admin-card">
+
+            <div class="admin-card-top">
+                <div class="admin-card-icon">📩</div>
+
+                @if (Model.UnreadMessagesCount > 0)
+                {
+                    <span class="admin-message-badge">
+                        @Model.UnreadMessagesCount new
+                    </span>
+                }
+            </div>
+
+            <h2>Messages</h2>
+
+            <p>
+                View and manage messages received from your Contact Me form.
+            </p>
+
+            <span class="admin-card-link">
+                Open Messages →
+            </span>
+
+        </a>
+
+
+        <!-- Certificates -->
+        <a asp-page="/Admin/Certificates/Index" class="admin-card">
+
+            <div class="admin-card-top">
+                <div class="admin-card-icon">🏆</div>
+            </div>
+
+            <h2>Certificates</h2>
+
+            <p>
+                Add, edit and manage your certificates and credentials.
+            </p>
+
+            <span class="admin-card-link">
+                Manage Certificates →
+            </span>
+
+        </a>
+
+
+        <!-- References -->
+        <a href="#" class="admin-card">
+
+            <div class="admin-card-top">
+                <div class="admin-card-icon">🔗</div>
+            </div>
+
+            <h2>References</h2>
+
+            <p>
+                Add, edit and manage your professional references.
+            </p>
+
+            <span class="admin-card-link">
+                Manage References →
+            </span>
+
+        </a>
+
+
+        <!-- Skills -->
+        <a href="#" class="admin-card">
+
+            <div class="admin-card-top">
+                <div class="admin-card-icon">💻</div>
+            </div>
+
+            <h2>Skills</h2>
+
+            <p>
+                Manage programming languages, technologies and skills.
+            </p>
+
+            <span class="admin-card-link">
+                Manage Skills →
+            </span>
+
+        </a>
+
+    </div>
+
+</div>

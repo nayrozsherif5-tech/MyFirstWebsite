@@ -1,0 +1,124 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.Certificates.CreateModel
+
+@{
+    ViewData["Title"] = "Add Certificate";
+}
+
+<div class="admin-form-page">
+
+    <div class="admin-form-header">
+        <h1>➕ Add Certificate</h1>
+        <p>Add a new certificate to your portfolio.</p>
+    </div>
+
+    <div class="admin-form-card">
+
+        <form method="post" enctype="multipart/form-data">
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger"></div>
+
+            <div class="admin-form-group">
+                <label asp-for="Certificate.Title">
+                    Certificate Title
+                </label>
+
+                <input asp-for="Certificate.Title"
+                       class="admin-form-control"
+                       placeholder="Enter certificate title" />
+
+                <span asp-validation-for="Certificate.Title"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="admin-form-group">
+                <label asp-for="Certificate.Organization">
+                    Organization
+                </label>
+
+                <input asp-for="Certificate.Organization"
+                       class="admin-form-control"
+                       placeholder="Enter organization name" />
+
+                <span asp-validation-for="Certificate.Organization"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="admin-form-group">
+                <label asp-for="Certificate.Description">
+                    Description
+                </label>
+
+                <textarea asp-for="Certificate.Description"
+                          class="admin-form-control admin-textarea"
+                          placeholder="Enter certificate description"></textarea>
+
+                <span asp-validation-for="Certificate.Description"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="admin-form-group">
+                <label asp-for="Certificate.Date">
+                    Date
+                </label>
+
+                <input asp-for="Certificate.Date"
+                       type="date"
+                       class="admin-form-control" />
+
+                <span asp-validation-for="Certificate.Date"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="admin-form-group">
+                <label>
+                    Certificate File
+                </label>
+
+                <input asp-for="ImageFile"
+                       type="file"
+                       class="admin-form-control admin-file-input"
+                       accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx" />
+
+                <small class="admin-form-help">
+                    Accepted: PDF, Word, JPG, PNG and WEBP.
+                </small>
+            </div>
+
+            <div class="admin-form-group">
+
+                <label asp-for="Certificate.CertificateLink">
+                    External Certificate Link
+                    <span class="optional-text">(Optional)</span>
+                </label>
+
+                <input asp-for="Certificate.CertificateLink"
+                       class="admin-form-control"
+                       placeholder="https://..." />
+
+                <small class="admin-form-help">
+                    Leave this empty if you uploaded the certificate file.
+                </small>
+
+            </div>
+
+            <div class="admin-form-actions">
+
+                <button type="submit"
+                        class="admin-save-btn">
+                    ➕ Add Certificate
+                </button>
+
+                <a asp-page="Index"
+                   class="admin-cancel-btn">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

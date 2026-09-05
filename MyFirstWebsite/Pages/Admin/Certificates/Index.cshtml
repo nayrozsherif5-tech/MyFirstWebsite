@@ -1,0 +1,83 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.Certificates.IndexModel
+
+@{
+    ViewData["Title"] = "Manage Certificates";
+}
+
+<div class="admin-certificates">
+
+    <div class="admin-page-header">
+        <div>
+            <h1>🏆 Manage Certificates</h1>
+            <p>Add, edit, or remove certificates from your portfolio.</p>
+        </div>
+
+        <a asp-page="Create" class="admin-add-btn">
+            ＋ Add Certificate
+        </a>
+    </div>
+
+    @if (Model.Certificates.Count == 0)
+    {
+        <div class="admin-empty-state">
+            <h3>No certificates yet</h3>
+            <p>Add your first certificate to get started.</p>
+        </div>
+    }
+    else
+    {
+        <div class="admin-certificate-list">
+
+            @foreach (var certificate in Model.Certificates)
+            {
+                <div class="admin-certificate-card">
+
+                    <div class="admin-certificate-info">
+
+                        <h2>@certificate.Title</h2>
+
+                        <p class="admin-certificate-issuer">
+                            Issued by
+                            <strong>@certificate.Organization</strong>
+                            • @certificate.Date.Year
+                        </p>
+
+                        <p class="admin-certificate-description">
+                            @certificate.Description
+                        </p>
+
+                    </div>
+
+                    <div class="admin-certificate-actions">
+
+                        @if (!string.IsNullOrWhiteSpace(certificate.ImagePath))
+                        {
+                            <a href="@certificate.ImagePath"
+                               target="_blank"
+                               class="admin-action-btn admin-view-btn">
+                                📄 View
+                            </a>
+                        }
+
+                        <a asp-page="Edit"
+                           asp-route-id="@certificate.Id"
+                           class="admin-action-btn admin-edit-btn">
+                            ✏️ Edit
+                        </a>
+
+                        <a asp-page="Delete"
+                           asp-route-id="@certificate.Id"
+                           class="admin-action-btn admin-delete-btn">
+                            🗑 Delete
+                        </a>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    }
+
+</div>
