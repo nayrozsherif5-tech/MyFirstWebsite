@@ -271,7 +271,14 @@ a {
     }
 }
 
-.
+/* ==========================================================
+   SOFT SKILLS
+========================================================== */
+
+.soft-skills-block {
+    margin-top: 36px;
+}
+
 -contact {
     text-align: center;
     padding: 50px 0;
@@ -6605,5 +6612,644 @@ body {
         width: 43px;
         height: 43px;
         font-size: 22px;
+    }
+}
+
+/* ==========================================================
+   DELETE MESSAGE CONFIRMATION MODAL
+========================================================== */
+
+/* Dark background behind popup */
+.delete-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(3, 18, 32, 0.78);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+
+    /* Show modal */
+    .delete-modal.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+/* ==========================================================
+   MODAL BOX
+========================================================== */
+
+.delete-modal-box {
+    width: 100%;
+    max-width: 420px;
+    padding: 32px 30px;
+    background: linear-gradient( 145deg, #173f68, #12365a );
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    transform: translateY(18px) scale(0.96);
+    transition: transform 0.25s ease;
+}
+
+
+/* Popup animation */
+.delete-modal.show .delete-modal-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ==========================================================
+   DELETE ICON
+========================================================== */
+
+.delete-modal-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    background: rgba(230, 57, 70, 0.14);
+    border: 1px solid rgba(230, 57, 70, 0.22);
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+
+/* ==========================================================
+   MODAL TEXT
+========================================================== */
+
+.delete-modal-box h2 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+
+.delete-modal-box p {
+    max-width: 340px;
+    margin: 0 auto 25px;
+    color: #c7d8e8;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+
+/* ==========================================================
+   MODAL BUTTONS
+========================================================== */
+
+.delete-modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+.delete-modal-cancel,
+.delete-modal-confirm {
+    min-width: 115px;
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Cancel button */
+.delete-modal-cancel {
+    background: #52677f;
+    color: #ffffff;
+}
+
+
+    .delete-modal-cancel:hover {
+        background: #647a93;
+        transform: translateY(-2px);
+    }
+
+
+/* Delete button */
+.delete-modal-confirm {
+    background: #e63946;
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(230, 57, 70, 0.2);
+}
+
+
+    .delete-modal-confirm:hover {
+        background: #f04b58;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+    }
+
+
+    /* Button press */
+    .delete-modal-cancel:active,
+    .delete-modal-confirm:active {
+        transform: translateY(0);
+    }
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 500px) {
+
+    .delete-modal {
+        padding: 16px;
+    }
+
+
+    .delete-modal-box {
+        padding: 28px 20px;
+    }
+
+
+        .delete-modal-box h2 {
+            font-size: 22px;
+        }
+
+
+    .delete-modal-actions {
+        flex-direction: column;
+    }
+
+
+    .delete-modal-cancel,
+    .delete-modal-confirm {
+        width: 100%;
+    }
+}
+/* ==========================================================
+   ADMIN DELETE CONFIRMATION PAGE
+========================================================== */
+
+.delete-confirmation-card {
+    max-width: 720px;
+}
+
+
+/* Warning Area */
+.delete-warning-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+    padding: 20px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    border-radius: 12px;
+}
+
+
+.delete-warning-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(239, 68, 68, 0.12);
+    border-radius: 50%;
+    font-size: 21px;
+}
+
+
+.delete-warning-box h3 {
+    margin: 0 0 5px;
+    color: #ff7b86;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.delete-warning-box p {
+    margin: 0;
+    color: #cbd9e8;
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   ITEM BEING DELETED
+========================================================== */
+
+.delete-item-preview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+    padding: 18px;
+    background: rgba(8, 38, 66, 0.55);
+    border: 1px solid rgba(56, 189, 248, 0.22);
+    border-radius: 11px;
+}
+
+
+.delete-item-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(56, 189, 248, 0.08);
+    border-radius: 9px;
+    font-size: 22px;
+}
+
+
+.delete-item-info {
+    min-width: 0;
+}
+
+
+    .delete-item-info strong {
+        display: block;
+        margin-bottom: 5px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+
+    .delete-item-info p {
+        margin: 0;
+        color: #c8d8e8;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+/* ==========================================================
+   DELETE PAGE BUTTONS
+========================================================== */
+
+.delete-confirmation-card .admin-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+}
+
+
+.delete-confirmation-card .admin-delete-btn,
+.delete-confirmation-card .admin-cancel-btn {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+
+.delete-confirmation-card .admin-delete-btn {
+    border: none;
+    background: #e63946;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+    .delete-confirmation-card .admin-delete-btn:hover {
+        background: #f04b58;
+        transform: translateY(-2px);
+        box-shadow: 0 7px 18px rgba(230, 57, 70, 0.22);
+    }
+
+
+.delete-confirmation-card .admin-cancel-btn {
+    background: #50677f;
+    color: #ffffff;
+}
+
+
+    .delete-confirmation-card .admin-cancel-btn:hover {
+        background: #607891;
+        color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .delete-warning-box {
+        align-items: flex-start;
+    }
+
+    .delete-confirmation-card .admin-form-actions {
+        flex-direction: column;
+    }
+
+    .delete-confirmation-card .admin-delete-btn,
+    .delete-confirmation-card .admin-cancel-btn {
+        width: 100%;
+    }
+}
+/* =====================================================
+   DELETE SKILL / DELETE PAGE FIX
+===================================================== */
+
+.delete-warning-box {
+    display: block;
+    padding: 22px 24px;
+    margin-bottom: 22px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.45);
+    border-radius: 12px;
+}
+
+    .delete-warning-box h3 {
+        margin: 0 0 8px 0;
+        color: #ff6b7a;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .delete-warning-box p {
+        margin: 0;
+        color: #d8e5f3;
+        font-size: 0.95rem;
+    }
+
+
+/* Skill information box */
+
+.current-file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 22px;
+    margin-bottom: 24px;
+    background: #12385f;
+    border: 1px solid #2c628f;
+    border-radius: 12px;
+}
+
+    .current-file > div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+        .current-file > div > span {
+            font-size: 1.5rem;
+        }
+
+    .current-file strong {
+        display: block;
+        margin-bottom: 5px;
+        color: #ffffff;
+        font-size: 1.05rem;
+    }
+
+    .current-file p {
+        margin: 0;
+        color: #cbd9e8;
+    }
+
+
+/* Delete / Cancel buttons */
+
+.admin-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-delete-btn {
+    padding: 11px 18px;
+    background: #ef3340;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+    .admin-delete-btn:hover {
+        background: #d92734;
+        transform: translateY(-2px);
+    }
+
+.admin-cancel-btn {
+    padding: 11px 18px;
+    background: #496580;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+    .admin-cancel-btn:hover {
+        background: #5a7895;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+/* ==========================================================
+   ACTIVITIES SECTION
+========================================================== */
+
+.activities-section {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 70px 24px;
+}
+
+
+/* ==========================================================
+   ACTIVITIES HEADING
+========================================================== */
+
+.activities-heading {
+    margin-bottom: 30px;
+}
+
+    .activities-heading h2 {
+        margin: 8px 0 8px;
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: -0.4px;
+    }
+
+    .activities-heading p {
+        max-width: 650px;
+        margin: 0;
+        color: #a9c4dc;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+
+/* ==========================================================
+   ACTIVITIES GRID
+========================================================== */
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* ==========================================================
+   ACTIVITY CARD
+========================================================== */
+
+.activity-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 24px;
+    background: linear-gradient( 145deg, #173f68, #12365a );
+    border: 1px solid rgba(56, 189, 248, 0.14);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+    /* Hover animation */
+
+    .activity-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(56, 189, 248, 0.35);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+    }
+
+
+/* ==========================================================
+   ACTIVITY ICON
+========================================================== */
+
+.activity-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(56, 189, 248, 0.09);
+    border: 1px solid rgba(56, 189, 248, 0.18);
+    border-radius: 12px;
+    font-size: 21px;
+}
+
+
+/* ==========================================================
+   ACTIVITY CONTENT
+========================================================== */
+
+.activity-content {
+    min-width: 0;
+}
+
+.activity-date {
+    display: block;
+    margin-bottom: 7px;
+    color: #55c2ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.activity-content h3 {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 750;
+}
+
+.activity-content h4 {
+    margin: 0 0 12px;
+    color: #8fd7ff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.activity-content p {
+    margin: 0;
+    color: #c7d7e7;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   ACTIVITY LINK
+========================================================== */
+
+.activity-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #55c2ff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+    .activity-link:hover {
+        color: #ffffff;
+        transform: translateX(3px);
+    }
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+
+    .activities-section {
+        padding: 50px 18px;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activities-heading h2 {
+        font-size: 28px;
+    }
+
+    .activity-card {
+        padding: 20px;
     }
 }

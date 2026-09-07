@@ -1,0 +1,142 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.Activities.AddModel
+
+@{
+    ViewData["Title"] = "Add Activity";
+}
+
+<div class="admin-form-page">
+
+    <a asp-page="Index" class="admin-back-btn">
+        ← Back to Activities
+    </a>
+
+    <div class="admin-form-header">
+        <h1>🌟 Add Activity</h1>
+        <p>Add a new extracurricular or professional activity.</p>
+    </div>
+
+    <div class="admin-form-card">
+
+        <form method="post">
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger">
+            </div>
+
+            <!-- Title -->
+            <div class="admin-form-group">
+                <label asp-for="Activity.Title"></label>
+
+                <input asp-for="Activity.Title"
+                       class="form-control"
+                       placeholder="Example: Eve Project Participant" />
+
+                <span asp-validation-for="Activity.Title"
+                      class="text-danger"></span>
+            </div>
+
+
+            <!-- Organization -->
+            <div class="admin-form-group">
+                <label asp-for="Activity.Organization"></label>
+
+                <input asp-for="Activity.Organization"
+                       class="form-control"
+                       placeholder="Example: Psychotopia Initiative" />
+
+                <span asp-validation-for="Activity.Organization"
+                      class="text-danger"></span>
+            </div>
+
+
+            <!-- Description -->
+            <div class="admin-form-group">
+                <label asp-for="Activity.Description"></label>
+
+                <textarea asp-for="Activity.Description"
+                          class="form-control"
+                          rows="5"
+                          placeholder="Describe the activity..."></textarea>
+
+                <span asp-validation-for="Activity.Description"
+                      class="text-danger"></span>
+            </div>
+
+
+            <!-- Dates -->
+            <div class="admin-form-row">
+
+                <div class="admin-form-group">
+                    <label asp-for="Activity.StartDate">
+                        Start Date
+                    </label>
+
+                    <input asp-for="Activity.StartDate"
+                           type="date"
+                           class="form-control" />
+
+                    <span asp-validation-for="Activity.StartDate"
+                          class="text-danger"></span>
+                </div>
+
+
+                <div class="admin-form-group">
+                    <label asp-for="Activity.EndDate">
+                        End Date
+                    </label>
+
+                    <input asp-for="Activity.EndDate"
+                           type="date"
+                           class="form-control" />
+
+                    <span asp-validation-for="Activity.EndDate"
+                          class="text-danger"></span>
+
+                    <small class="admin-form-help">
+                        Leave empty if the activity is ongoing.
+                    </small>
+                </div>
+
+            </div>
+
+
+            <!-- Link -->
+            <div class="admin-form-group">
+                <label asp-for="Activity.Link">
+                    Link (Optional)
+                </label>
+
+                <input asp-for="Activity.Link"
+                       class="form-control"
+                       placeholder="https://..." />
+
+                <span asp-validation-for="Activity.Link"
+                      class="text-danger"></span>
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="admin-form-actions">
+
+                <button type="submit"
+                        class="admin-save-btn">
+                    ✓ Add Activity
+                </button>
+
+                <a asp-page="Index"
+                   class="admin-cancel-btn">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

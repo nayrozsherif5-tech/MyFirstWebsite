@@ -1,0 +1,136 @@
+﻿@page "{id:int}"
+@model MyFirstWebsite.Pages.Admin.Activities.EditModel
+
+@{
+    ViewData["Title"] = "Edit Activity";
+}
+
+<div class="admin-form-page">
+
+    <a asp-page="Index" class="admin-back-btn">
+        ← Back to Activities
+    </a>
+
+    <div class="admin-form-header">
+        <h1>✏ Edit Activity</h1>
+        <p>Update the activity details below.</p>
+    </div>
+
+    <div class="admin-form-card">
+
+        <form method="post">
+
+            <input type="hidden" asp-for="Activity.Id" />
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger">
+            </div>
+
+
+            <div class="admin-form-group">
+                <label asp-for="Activity.Title"></label>
+
+                <input asp-for="Activity.Title"
+                       class="form-control" />
+
+                <span asp-validation-for="Activity.Title"
+                      class="text-danger"></span>
+            </div>
+
+
+            <div class="admin-form-group">
+                <label asp-for="Activity.Organization"></label>
+
+                <input asp-for="Activity.Organization"
+                       class="form-control" />
+
+                <span asp-validation-for="Activity.Organization"
+                      class="text-danger"></span>
+            </div>
+
+
+            <div class="admin-form-group">
+                <label asp-for="Activity.Description"></label>
+
+                <textarea asp-for="Activity.Description"
+                          class="form-control"
+                          rows="5"></textarea>
+
+                <span asp-validation-for="Activity.Description"
+                      class="text-danger"></span>
+            </div>
+
+
+            <div class="admin-form-row">
+
+                <div class="admin-form-group">
+                    <label asp-for="Activity.StartDate">
+                        Start Date
+                    </label>
+
+                    <input asp-for="Activity.StartDate"
+                           type="date"
+                           class="form-control" />
+
+                    <span asp-validation-for="Activity.StartDate"
+                          class="text-danger"></span>
+                </div>
+
+
+                <div class="admin-form-group">
+                    <label asp-for="Activity.EndDate">
+                        End Date
+                    </label>
+
+                    <input asp-for="Activity.EndDate"
+                           type="date"
+                           class="form-control" />
+
+                    <span asp-validation-for="Activity.EndDate"
+                          class="text-danger"></span>
+
+                    <small class="admin-form-help">
+                        Leave empty if the activity is ongoing.
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="admin-form-group">
+                <label asp-for="Activity.Link">
+                    Link (Optional)
+                </label>
+
+                <input asp-for="Activity.Link"
+                       class="form-control"
+                       placeholder="https://..." />
+
+                <span asp-validation-for="Activity.Link"
+                      class="text-danger"></span>
+            </div>
+
+
+            <div class="admin-form-actions">
+
+                <button type="submit"
+                        class="admin-save-btn">
+                    ✓ Save Changes
+                </button>
+
+                <a asp-page="Index"
+                   class="admin-cancel-btn">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

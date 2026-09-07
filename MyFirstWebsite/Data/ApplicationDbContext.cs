@@ -18,5 +18,7 @@ namespace MyFirstWebsite.Data
         public DbSet<Reference> References { get; set; }
 
         public DbSet<Skill> Skills { get; set; }
+
+        public DbSet<Activity> Activities { get; set; }
     }
 }

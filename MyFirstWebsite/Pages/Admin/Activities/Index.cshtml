@@ -1,0 +1,101 @@
+﻿@page
+@model MyFirstWebsite.Pages.Admin.Activities.IndexModel
+
+@{
+    ViewData["Title"] = "Manage Activities";
+}
+
+<div class="admin-activities-page">
+
+    <a asp-page="/Admin/Index" class="admin-back-btn">
+        ← Back to Dashboard
+    </a>
+
+    <div class="admin-page-header">
+
+        <div>
+            <h1>🌟 Manage Activities</h1>
+            <p>Add, edit, and manage your extracurricular activities.</p>
+        </div>
+
+        <a asp-page="Add" class="admin-add-btn">
+            + Add Activity
+        </a>
+
+    </div>
+
+
+    @if (Model.Activities.Count == 0)
+    {
+        <div class="admin-empty-state">
+            <h3>No activities yet</h3>
+            <p>Your activities will appear here.</p>
+        </div>
+    }
+    else
+    {
+        <div class="admin-activity-list">
+
+            @foreach (var activity in Model.Activities)
+            {
+                <div class="admin-activity-card">
+
+                    <div class="admin-activity-info">
+
+                        <h2>@activity.Title</h2>
+
+                        <p class="admin-activity-organization">
+                            @activity.Organization
+                        </p>
+
+                        <p class="admin-activity-date">
+
+                            @if (activity.EndDate.HasValue)
+                            {
+                                if (activity.StartDate.Year == activity.EndDate.Value.Year &&
+                                activity.StartDate.Month == activity.EndDate.Value.Month)
+                                {
+                                    @activity.StartDate.ToString("MMM yyyy")
+                                }
+                                else
+                                {
+                                    @($"{activity.StartDate:MMM yyyy} — {activity.EndDate.Value:MMM yyyy}")
+                                }
+                            }
+                            else
+                            {
+                                @activity.StartDate.ToString("MMM yyyy")
+                            }
+
+                        </p>
+
+                        <p class="admin-activity-description">
+                            @activity.Description
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-activity-actions">
+
+                        <a asp-page="Edit"
+                           asp-route-id="@activity.Id"
+                           class="admin-action-btn admin-edit-btn">
+                            ✏ Edit
+                        </a>
+
+                        <a asp-page="Delete"
+                           asp-route-id="@activity.Id"
+                           class="admin-action-btn admin-delete-btn">
+                            🗑 Delete
+                        </a>
+
+                    </div>
+
+                </div>
+                }
+
+        </div>
+    }
+
+</div>

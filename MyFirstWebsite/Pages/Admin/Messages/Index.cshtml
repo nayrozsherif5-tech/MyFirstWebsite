@@ -84,14 +84,13 @@
                             </button>
 
                         </form>
-
                         <form method="post"
                               asp-page-handler="Delete"
                               asp-route-id="@message.Id"
-                              onsubmit="return confirm('Are you sure you want to delete this message?');">
+                              class="delete-message-form">
 
-                            <button type="submit"
-                                    class="admin-message-delete-btn">
+                            <button type="button"
+                                    class="admin-message-delete-btn open-delete-modal">
                                 🗑 Delete
                             </button>
 
@@ -106,3 +105,108 @@
     }
 
 </div>
+
+
+<!-- =====================================================
+     DELETE CONFIRMATION MODAL
+===================================================== -->
+
+<div id="deleteModal" class="delete-modal">
+
+    <div class="delete-modal-box">
+
+        <div class="delete-modal-icon">
+            🗑
+        </div>
+
+        <h2>Delete Message?</h2>
+
+        <p>
+            Are you sure you want to delete this message?
+            This action cannot be undone.
+        </p>
+
+        <div class="delete-modal-actions">
+
+            <button type="button"
+                    id="cancelDelete"
+                    class="delete-modal-cancel">
+                Cancel
+            </button>
+
+            <button type="button"
+                    id="confirmDelete"
+                    class="delete-modal-confirm">
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     DELETE MODAL SCRIPT
+===================================================== -->
+@section Scripts {
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const modal = document.getElementById("deleteModal");
+            const cancelButton = document.getElementById("cancelDelete");
+            const confirmButton = document.getElementById("confirmDelete");
+            const deleteButtons = document.querySelectorAll(".open-delete-modal");
+
+            let selectedForm = null;
+
+
+            deleteButtons.forEach(button => {
+
+                button.addEventListener("click", function () {
+
+                    selectedForm = this.closest(".delete-message-form");
+
+                    modal.classList.add("show");
+
+                });
+
+            });
+
+
+            cancelButton.addEventListener("click", function () {
+
+                modal.classList.remove("show");
+                selectedForm = null;
+
+            });
+
+
+            confirmButton.addEventListener("click", function () {
+
+                if (selectedForm) {
+                   selectedForm.requestSubmit();
+                }
+
+            });
+
+
+            modal.addEventListener("click", function (event) {
+
+                if (event.target === modal) {
+
+                    modal.classList.remove("show");
+                    selectedForm = null;
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+}

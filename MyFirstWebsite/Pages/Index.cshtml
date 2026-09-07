@@ -257,6 +257,10 @@
 
 <section class="skills-section">
 
+    <!-- =====================================================
+         TECHNICAL SKILLS
+    ====================================================== -->
+
     <div class="skills-heading">
 
         <span class="section-kicker">
@@ -272,14 +276,51 @@
 
     </div>
 
+
     <div class="skills-grid">
 
-        @foreach (var skill in Model.Skills)
+        @foreach (var skill in Model.Skills.Where(s => s.Category != "Soft Skills"))
         {
             <span class="skill-item">
                 @skill.Name
             </span>
         }
+
+    </div>
+
+
+    <!-- =====================================================
+         SOFT SKILLS
+    ====================================================== -->
+
+    <div class="soft-skills-block">
+
+        <div class="skills-heading">
+
+            <span class="section-kicker">
+                SOFT SKILLS
+            </span>
+
+            <h2>Professional skills</h2>
+
+            <p>
+                Interpersonal and communication skills I use across
+                academic, professional, and team environments.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            @foreach (var skill in Model.Skills.Where(s => s.Category == "Soft Skills"))
+            {
+                <span class="skill-item">
+                    @skill.Name
+                </span>
+            }
+
+        </div>
 
     </div>
 
@@ -337,6 +378,98 @@
     </div>
 
 </section>
+
+
+<!-- =====================================================
+     ACTIVITIES
+===================================================== -->
+
+<section class="activities-section">
+
+    <div class="activities-heading">
+
+        <span class="section-kicker">
+            ACTIVITIES
+        </span>
+
+        <h2>Beyond the classroom</h2>
+
+        <p>
+            Activities and initiatives that have contributed to my
+            communication, teamwork, and professional development.
+        </p>
+
+    </div>
+
+
+    <div class="activities-grid">
+
+        @foreach (var activity in Model.Activities)
+        {
+            <article class="activity-card">
+
+                <div class="activity-icon">
+                    🌟
+                </div>
+
+                <div class="activity-content">
+
+                    <span class="activity-date">
+
+                        @if (activity.EndDate.HasValue)
+                        {
+                            if (activity.StartDate.Year == activity.EndDate.Value.Year &&
+                            activity.StartDate.Month == activity.EndDate.Value.Month)
+                            {
+                                @activity.StartDate.ToString("MMM yyyy")
+                            }
+                            else
+                            {
+                                @($"{activity.StartDate:MMM yyyy} — {activity.EndDate.Value:MMM yyyy}")
+                            }
+                        }
+                        else
+                        {
+                            @activity.StartDate.ToString("MMM yyyy")
+                        }
+
+                    </span>
+
+                    <h3>
+                        @activity.Title
+                    </h3>
+
+                    <h4>
+                        @activity.Organization
+                    </h4>
+
+                    <p>
+                        @activity.Description
+                    </p>
+
+                @if (!string.IsNullOrWhiteSpace(activity.Link))
+                    {
+                        <a href="@activity.Link"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="activity-link">
+                            View Activity →
+                        </a>
+                    }
+
+                </div>
+
+            </article>
+        }
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
 
 
 <section class="testimonials-section">
@@ -408,6 +541,7 @@
     </div>
 
 </section>
+
 
 
 <div id="contact" class="portfolio-footer">
