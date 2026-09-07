@@ -5,40 +5,84 @@
     ViewData["Title"] = "References";
 }
 
-<h1>📄 References</h1>
+<div class="references-page">
 
-@if (Model.References.Count == 0)
-{
-    <p>No references available yet.</p>
-}
-else
-{
-    @foreach (var reference in Model.References)
+    <div class="references-heading">
+
+        <span class="section-kicker">REFERENCES</span>
+
+        <h1>Professional references</h1>
+
+        <p>
+            Reference letters and professional feedback from
+            internships and training experiences.
+        </p>
+
+    </div>
+
+
+    @if (Model.References.Count == 0)
     {
-        <div class="card">
+        <div class="references-empty">
+            <p>No references available yet.</p>
+        </div>
+    }
+    else
+    {
+        <div class="references-grid">
 
-            <h3>@reference.Title</h3>
-
-            <p>@reference.Description</p>
-
-            @if (!string.IsNullOrWhiteSpace(reference.FilePath))
+            @foreach (var reference in Model.References)
             {
-                <a class="btn"
-                   href="@reference.FilePath"
-                   target="_blank">
-                    📄 View Reference
-                </a>
-            }
-            else if (!string.IsNullOrWhiteSpace(reference.ReferenceLink))
-            {
-                <a class="btn"
-                   href="@reference.ReferenceLink"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    🔗 View Reference
-                </a>
+                <div class="reference-modern-card">
+
+                    <div class="reference-content">
+
+                        <span class="reference-label">
+                            REFERENCE
+                        </span>
+
+                        <h3>
+                            @reference.Title
+                        </h3>
+
+                        <p>
+                            @reference.Description
+                        </p>
+
+                    </div>
+
+
+                    <div class="reference-action">
+
+                        @if (!string.IsNullOrWhiteSpace(reference.FilePath))
+                        {
+                            <a href="@reference.FilePath"
+                               target="_blank"
+                               class="detail-primary-btn">
+
+                                View Reference →
+
+                            </a>
+                        }
+
+                        else if (!string.IsNullOrWhiteSpace(reference.ReferenceLink))
+                        {
+                            <a href="@reference.ReferenceLink"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="detail-primary-btn">
+
+                                View Reference →
+
+                            </a>
+                        }
+
+                    </div>
+
+                </div>
             }
 
         </div>
     }
-}
+
+</div>

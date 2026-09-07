@@ -4,10 +4,39 @@
     ViewData["Title"] = "Message Sent";
 }
 
-<section class="contact-section">
-    <div class="card">
-        <h2>Thank You!</h2>
-        <p>Your message has been received. I’ll get back to you soon.</p>
-        <a href="/" class="btn">Back to Home</a>
+<div class="message-sent-page">
+
+    <div class="message-success-card">
+
+        <div class="message-success-icon">
+            ✓
+        </div>
+
+        <span class="section-kicker">
+            MESSAGE SENT
+        </span>
+
+        <h1>Thank you!</h1>
+
+        <p>
+            Your message has been received successfully.
+            I’ll get back to you as soon as possible.
+        </p>
+
+        <div class="message-success-actions">
+
+            <a asp-page="/Index"
+               class="detail-primary-btn">
+                Back to Home
+            </a>
+
+            <a asp-page="/Projects"
+               class="detail-secondary-btn">
+                View Projects
+            </a>
+
+        </div>
+
     </div>
-</section>
+
+</div>

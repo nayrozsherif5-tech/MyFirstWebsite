@@ -4,108 +4,248 @@
     ViewData["Title"] = "Information Technologies Internship";
 }
 
+<div class="project-detail-page">
 
-<div class="internship-details-container">
+    <!-- Heading -->
+    <div class="project-detail-heading">
 
-    <!-- Hero Section -->
-    <div class="hero-content">
-        <h1>💼 Information Technologies Internship</h1>
-        <p class="project-subtitle">Arch of Sigma • TNC Group Şirketleri</p>
+        <span class="section-kicker">PROJECT DETAILS</span>
 
-        <div class="project-tags">
-            <span class="tech">Excel</span>
-            <span class="tech">AutoCAD</span>
-            <span class="tech">Python</span>
-            <span class="tech">Blender</span>
-        </div>
-      
+        <h1>Information Technologies Internship</h1>
+
+        <p>
+            A multidisciplinary technical internship covering data analysis,
+            CAD design, Python programming, and 3D modeling.
+        </p>
+
     </div>
+
+
+    <!-- Technologies -->
+    <div class="project-detail-tags">
+
+        <span>Excel</span>
+        <span>AutoCAD</span>
+        <span>Python</span>
+        <span>Blender</span>
+
+    </div>
+
+
+    <!-- Actions -->
+    <div class="project-detail-actions">
+
+        <a asp-page="/Projects"
+           class="detail-secondary-btn">
+            ← Back to Projects
+        </a>
+
+    </div>
+
 
     <!-- Overview -->
-    <div class="detail-card visible">
-        <h2>📋 Overview</h2>
+    <section class="project-detail-section">
+
+        <span class="section-kicker">OVERVIEW</span>
+
+        <h2>About the internship</h2>
+
         <p>
-            I successfully completed a comprehensive Information Technologies Internship 
-            organized by Arch of Sigma under TNC Group Şirketleri. 
-            The program provided hands-on training in multiple technical domains, 
-            combining software, design, and engineering skills.
+            I successfully completed a comprehensive Information Technologies
+            Internship organized by Arch of Sigma under TNC Group Şirketleri.
+            The program provided hands-on training across multiple technical
+            areas, combining software, engineering, design, and data-analysis skills.
         </p>
+
+    </section>
+
+
+    <!-- Training Areas -->
+    <section class="project-detail-section">
+
+        <span class="section-kicker">TRAINING AREAS</span>
+
+        <h2>Technical projects</h2>
+
+        <div class="training-detail-grid">
+
+            <!-- Excel -->
+            <div class="training-detail-card">
+
+                <img src="/image/Excel.png"
+                     alt="Excel Dashboard"
+                     class="training-detail-image" />
+
+                <div class="training-detail-content">
+
+                    <h3>Excel Data Analysis</h3>
+
+                    <p>
+                        Built dashboards and reports using Pivot Tables,
+                        formulas, and charts to analyze and visualize data.
+                    </p>
+
+                    <a href="/files/Excel Proje.xlsx"
+                       target="_blank"
+                       class="detail-primary-btn">
+                        View Excel File
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- AutoCAD -->
+            <div class="training-detail-card">
+
+                <img src="/image/AutoCat.png"
+                     alt="AutoCAD Drawing"
+                     class="training-detail-image" />
+
+                <div class="training-detail-content">
+
+                    <h3>AutoCAD Technical Design</h3>
+
+                    <p>
+                        Created technical drawings and room layouts
+                        while applying precise drafting and design techniques.
+                    </p>
+
+                    <a href="/files/Oda tasarımı-Model.pdf"
+                       target="_blank"
+                       class="detail-primary-btn">
+                        View Design File
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Python -->
+            <div class="training-detail-card">
+
+                <img src="/image/Python.png"
+                     alt="Python Project"
+                     class="training-detail-image" />
+
+                <div class="training-detail-content">
+
+                    <h3>Python Programming</h3>
+
+                    <p>
+                        Developed console applications and scripts with
+                        a focus on modular design, error handling, and file I/O.
+                    </p>
+
+                    <a href="https://colab.research.google.com/drive/1oZ1BHfwTC5sHpXvsEjRdASWWMlVjH_7E?usp=sharing"
+                       target="_blank"
+                       class="detail-primary-btn">
+                        View Python Code
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Blender -->
+            <div class="training-detail-card">
+
+                <img src="/image/Nayroz_Abdalall_Render01 .png.png"
+                     alt="Blender 3D Model"
+                     class="training-detail-image" />
+
+                <div class="training-detail-content">
+
+                    <h3>Blender 3D Modeling</h3>
+
+                    <p>
+                        Created 3D models and isometric room designs
+                        using materials, lighting, and rendering workflows.
+                    </p>
+
+                    <a href="/files/Nayroz_Abdalall_IzometrikOda_v01 .blend.blend"
+                       target="_blank"
+                       class="detail-primary-btn">
+                        Download Blender File
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills Summary -->
+    <section class="project-detail-section">
+
+        <span class="section-kicker">SKILLS DEVELOPED</span>
+
+        <h2>What I practiced</h2>
+
+        <div class="detail-features-grid">
+
+            <div class="detail-feature-card">
+                <h3>Data Analysis</h3>
+                <p>
+                    Worked with structured data, formulas,
+                    Pivot Tables, reports, and visualizations.
+                </p>
+            </div>
+
+            <div class="detail-feature-card">
+                <h3>Technical Drawing</h3>
+                <p>
+                    Practiced precise CAD-based design
+                    and technical drafting workflows.
+                </p>
+            </div>
+
+            <div class="detail-feature-card">
+                <h3>Programming</h3>
+                <p>
+                    Applied Python fundamentals through
+                    practical scripts and console applications.
+                </p>
+            </div>
+
+            <div class="detail-feature-card">
+                <h3>3D Design</h3>
+                <p>
+                    Developed 3D modeling, material,
+                    lighting, and rendering skills.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Bottom -->
+    <div class="project-detail-bottom">
+
+        <h2>Explore more projects</h2>
+
+        <p>
+            Return to the project collection to explore my AI,
+            Computer Vision, Web Development, and Engineering work.
+        </p>
+
+        <div class="project-detail-actions">
+
+            <a asp-page="/Projects"
+               class="detail-secondary-btn">
+                Back to Projects
+            </a>
+
+        </div>
+
     </div>
 
-    <!-- Four Sub-Projects -->
-    <div class="info-grid">
-        <!-- Excel -->
-        <div class="detail-card visible">
-            <h2>💻 Excel</h2>
-            <img src="/image/Excel.png" alt="Excel Dashboard" class="gallery-img">
-            <p>
-                Built dashboards and reports using Pivot Tables, formulas, and charts
-                to analyze and visualize data effectively.
-            </p>
-            <a class="btn" href="/files/Excel Proje.xlsx" target="_blank">📊 View Excel File</a>
-        </div>
-
-        <!-- AutoCAD -->
-        <div class="detail-card visible">
-            <h2>📐 AutoCAD</h2>
-            <img src="/image/AutoCat.png" alt="AutoCAD Drawing" class="gallery-img">
-            <p>
-                Designed technical drawings and layouts with precision, applying
-                industry standards for architectural drafting.
-            </p>
-            <a class="btn" href="/files/Oda tasarımı-Model.pdf" target="_blank">📐 View DWG File</a>
-        </div>
-
-        <!-- Python -->
-        <div class="detail-card visible">
-            <h2>🐍 Python</h2>
-            <img src="/image/Python.png" alt="Python Script" class="gallery-img">
-            <p>
-                Developed console applications and automation scripts, focusing on
-                modular design, error handling, and file I/O.
-            </p>
-            <a class="btn" href="https://colab.research.google.com/drive/1oZ1BHfwTC5sHpXvsEjRdASWWMlVjH_7E?usp=sharing" target="_blank">🐍 View Python Code</a>
-        </div>
-
-        <!-- Blender -->
-        <div class="detail-card visible">
-            <h2>🎨 Blender</h2>
-            <img src="/image/Nayroz_Abdalall_Render01 .png.png" alt="Blender 3D Model" class="gallery-img">
-            <p>
-                Created 3D models and isometric room designs, applying materials,
-                lighting, and rendering workflows.
-            </p>
-            <a class="btn" href="/files/Nayroz_Abdalall_IzometrikOda_v01 .blend.blend" target="_blank">🎨 Download Blender File</a>
-        </div>
-    </div>
-    <div class="hero-buttons">
-        <a asp-page="/Projects" class="btn">Back to Projects</a>
-    </div>
-
-
-
-   <!-- Footer -->
-    <div class="footer-contact">
-        <div class="footer-links">
-            <a href="https://github.com/nayrozsherif5-tech" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/nayroz" target="_blank">LinkedIn</a>
-            <a href="mailto:nayroz@example.com">Email</a>
-        </div>
-        <div class="footer">Built with ❤️ by Nayroz</div>
-    </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const elements = document.querySelectorAll('.detail-card, .feature-card, .gallery-img');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.2 });
-
-        elements.forEach(el => observer.observe(el));
-    });
-</script>

@@ -4,288 +4,452 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="hero" id="home">
+<div class="hero home-hero" id="home">
 
-    <img src="/image/nayroz.jpg"
-         alt="Nayroz"
-         class="profile-pic" />
-    
+    <div class="home-hero-text">
 
-    <h1>Nayroz Abdalall</h1>
+        <span class="hero-eyebrow">
+            COMPUTER ENGINEERING STUDENT
+        </span>
 
-    <h3>Computer Engineering Student</h3>
+        <h1>
+            Nayroz <span>Abdalall</span>
+        </h1>
 
-    <p class="tagline">
-        AI Enthusiast • Web Developer • Computer Engineer
-    </p>
-    <p class="languages-line">
-        
-        🌍 Arabic (Native) • English (Professional) • Turkish (Fluent)
-        
-    </p>
+        <h3>
+            AI Enthusiast • Web Developer • Computer Engineer
+        </h3>
 
-    <p>
-        Istanbul Kültür University
-    </p>
-    <div class="hero-buttons">
+        <p class="home-hero-description">
+            Passionate about software development, Artificial Intelligence
+            and problem solving. I enjoy building meaningful projects
+            and turning ideas into real solutions.
+        </p>
 
-        <a class
-           Contact Me
-</a>
+        <div class="home-hero-buttons">
 
-        <a class="btn" href="/CV.pdf" >
-            Download CV
+            <a asp-page="/Projects"
+               class="hero-primary-btn">
+                View My Projects →
+            </a>
+
+            <a href="/CV.pdf"
+               class="hero-secondary-btn"
+               target="_blank">
+                ↓ Download CV
+            </a>
+
+        </div>
+
+        <div class="home-social-links">
+
+            <a href="https://www.linkedin.com/in/nayroz-abdalall-958972251/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/nayrozsherif5-tech"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="mailto:nayrozshe91@gmail.com">
+                Email
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="home-hero-visual">
+
+        <div class="hero-image-shape">
+
+            <img src="/image/nayroz.jpg"
+                 alt="Nayroz Abdalall"
+                 class="home-profile-image" />
+
+        </div>
+
+        <div class="hero-quote-card">
+            <span>“</span>
+            <p>Turning ideas into opportunities.</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<section class="about-section">
+
+    <div class="about-heading">
+        <span class="section-kicker">ABOUT ME</span>
+        <h2>Get to know me</h2>
+        <p>
+            A quick overview of my education and professional experience.
+        </p>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+            <div class="about-icon">🎓</div>
+
+            <div>
+                <h3>Education</h3>
+
+                <h4>Mimar Sinan Anadolu İmam Hatip School</h4>
+                <p class="about-meta">
+                    Turkish Section · Turkey · 2020–2023
+                </p>
+
+                <h4>Istanbul Kültür University</h4>
+                <p class="about-meta">
+                    Computer Engineering · 2023–Present
+                </p>
+            </div>
+        </div>
+
+        <div class="about-card">
+            <div class="about-icon">💼</div>
+
+            <div>
+                <h3>Experience</h3>
+
+                <h4>Artificial Intelligence Intern — CodeAlpha</h4>
+                <p>
+                    Worked on an FAQ chatbot using NLP and an
+                    object detection and tracking system using YOLO and OpenCV.
+                </p>
+
+                <h4>Intern — TNC Group Companies</h4>
+                <p>
+                    Completed practical work using Excel, AutoCAD,
+                    Python and Blender.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="featured-projects-section">
+
+    <div class="projects-heading">
+
+        <span class="section-kicker">
+            FEATURED PROJECTS
+        </span>
+
+        <h2>Some of my work</h2>
+
+        <p>
+            Selected projects in Artificial Intelligence and Computer Vision.
+        </p>
+
+    </div>
+
+
+    <div class="featured-projects-grid">
+
+        <!-- AI FAQ Chatbot -->
+        <article class="featured-project-card">
+
+            <img src="/image/FaqChatbot.png"
+                 alt="AI FAQ Chatbot"
+                 class="featured-project-image" />
+
+            <div class="featured-project-body">
+
+                <h3>AI FAQ Chatbot</h3>
+
+                <p class="featured-project-description">
+                    An NLP-powered chatbot designed to answer frequently
+                    asked questions using text preprocessing and similarity matching.
+                </p>
+
+                <div class="featured-project-tags">
+                    <span>Python</span>
+                    <span>NLP</span>
+                    <span>Scikit-Learn</span>
+                </div>
+
+                <div class="featured-project-links">
+
+                    <a asp-page="/FaqChatbot"
+                       class="project-details-link">
+                        View Project →
+                    </a>
+
+                    <a href="https://github.com/nayrozsherif5-tech/CodeAlpha_ChatbotFAQ"
+                       target="_blank"
+                       class="project-github-link">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- YOLO Object Detection -->
+        <article class="featured-project-card">
+
+            <img src="/image/ObjectDetection.png"
+                 alt="YOLO Object Detection"
+                 class="featured-project-image" />
+
+            <div class="featured-project-body">
+
+                <h3>YOLO Object Detection</h3>
+
+                <p class="featured-project-description">
+                    A real-time computer vision project for detecting
+                    and tracking objects using YOLO and OpenCV.
+                </p>
+
+                <div class="featured-project-tags">
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>YOLO</span>
+                </div>
+
+                <div class="featured-project-links">
+
+                    <a asp-page="/YoloProject"
+                       class="project-details-link">
+                        View Project →
+                    </a>
+
+                    <a href="https://github.com/nayrozsherif5-tech/CodeAlpha_ObjectDetectionTracking"
+                       target="_blank"
+                       class="project-github-link">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <div class="projects-view-all">
+
+        <a asp-page="/Projects">
+            View All Projects →
         </a>
 
     </div>
 
-    <p class="bio">
-        Passionate Computer Engineering student specializing in
-        Artificial Intelligence, Computer Vision,
-        Software Engineering, and Web Development.
-    </p>
-
-<hr>
-
-<section>
-        <h2 class="section-title">🎓 Education</h2>
-    <p>
-            Faculty of Mimar Sinan Andolu İmam Hatip School ,Turkish Section, Turkey.
-            (2020-2023)
-            <br />
-            Computer Engineering Student at Istanbul Kültür University
-            (2023 - Present)
-        </p>
-   
 </section>
-
-<hr>
-
-<section>
-        <h2 class="section-title">
-            💼 Experience</>
-
-    <h4>Artificial Intelligence Intern - CodeAlpha</h4>
-    <p>
-        FAQ Chatbot using NLP, Object Detection and Tracking
-        using YOLO and OpenCV.
-    </p>
-
-    <h4>Intern - TNC Group Companies</h4>
-    <p>
-        Worked with Excel, AutoCAD, Python and Blender.
-    </p>
-</section>
-
-<hr>
-
-    <section>
-        <h2 class="section-title">✨ Featured Projects ✨</h2>
-        <p class="projects-subtitle">
-            Explore my AI, Computer Vision, and Engineering projects.
-        </p>
-        <div class="craft-card-grid">
-            <!-- AI FAQ Chatbot -->
-            <div class="craft-card craft-ai">
-                <img src="/image/FaqChatbot.png" alt="AI FAQ Chatbot">
-                <h4>🤖 AI FAQ Chatbot</h4>
-                <p class="craft-tags">Python · NLP · Scikit-Learn</p>
-                <div class="craft-buttons">
-                    <a href="https://github.com/nayrozsherif5-tech/CodeAlpha_ChatbotFAQ" target="_blank" class="btn">Code</a>
-                    <a asp-page="/FaqChatbot" class="btn">Details</a>
-                </div>
-            </div>
-
-            <!-- YOLO Object Detection -->
-            <div class="craft-card craft-yolo">
-                <img src="/image/ObjectDetection.png" alt="YOLO Object Detection">
-                <h4>👁 YOLO Object Detection</h4>
-                <p class="craft-tags">Python · OpenCV · YOLO</p>
-                <div class="craft-buttons">
-                    <a href="https://github.com/nayrozsherif5-tech/CodeAlpha_ObjectDetectionTracking" target="_blank" class="btn">Code</a>
-                    <a asp-page="/YoloProject" class="btn">Details</a>
-                </div>
-            </div>
-        </div>
-
-        <p class="craft-note">
-            These are just a few highlighted projects I’ve worked on.
-            If you’d like to explore all of my projects, please check the full
-            <a href="/Projects">Projects section</a>.
-        </p>
-
-           
-
-    </section>
+  
 
  
 
-<hr>
+<section class="skills-section">
 
-    <section>
-        <h2>🛠 Technical Skills</h2>
+    <div class="skills-heading">
 
-        <div class="skills">
+        <span class="section-kicker">
+            TECHNICAL SKILLS
+        </span>
 
-            @foreach (var skill in Model.Skills)
-            {
-                <span class="skill">
-                    @skill.Name
-                </span>
-            }
+        <h2>Tools & technologies</h2>
 
-        </div>
-    </section>
-
-<hr>
-
-    <section id="achievements">
-        <h2 class="section-title">🌟 Achievements</h2>
-        <p class="projects-subtitle">Certifications and endorsements that highlight my journey</p>
-
-        <div class="achievements-grid">
-            <!-- GDSC Certificate -->
-            <div class="achievement-card">
-                <div class="achievement-header">
-                    <img src="/image/GDSC.png" alt="GDSC Logo" class="achievement-logo">
-                    <h4>Google Developer Student Club (GDSC)</h4>
-                </div>
-                <p class="achievement-desc">Core Team Member · Issued 2024</p>
-                <p class="impact">Organized 5+ developer workshops and collaborated with 20 peers on community projects.</p>
-                <a href="/Certificates/GDSC-core-team.pdf" target="_blank" class="btn">View Credential</a>
-            </div>
-
-            <!-- CodeAlpha Internship -->
-            <div class="achievement-card">
-                <div class="achievement-header">
-                    <img src="/image/codealpha_logo.jpg" alt="CodeAlpha Logo" class="achievement-logo">
-                    <h4>CodeAlpha Internship Certificate</h4>
-                </div>
-                <p class="achievement-desc">AI & NLP Projects · Issued 2026</p>
-                <p class="impact">Built an FAQ chatbot and YOLO object detection system, reducing manual support by 60%.</p>
-                <a asp-page="/Projects" target="_blank" class="btn">Details</a>
-            </div>
-
-            <!-- Endorsement 1 -->
-            <div class="achievement-card">
-                <div class="achievement-header">
-                    <img src="/image/codealpha_logo.jpg" alt="CodeAlpha Logo" class="achievement-logo">
-                    <h4>Supervisor, CodeAlpha Internship</h4>
-                </div>
-                <p class="achievement-quote">“Nayroz demonstrated exceptional skill in AI and computer vision projects, delivering results ahead of schedule.”</p>
-            </div>
-
-            <!-- Endorsement 2 -->
-            <div class="achievement-card">
-                <div class="achievement-header">
-                    <img src="/image/TNC.jpg" alt="TNC Group Logo" class="achievement-logo">
-                    <h4>Manager, TNC Group Companies</h4>
-                </div>
-                <p class="achievement-quote">“His ability to learn quickly and apply tools like AutoCAD and Python made him a valuable contributor to our team.”</p>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-    <section id="certifications">
-        <h2 class="section-title">🏆 Certifications</h2>
-        <p class="projects-subtitle">Professional certifications, internships, and training programs</p>
-
-        <div class="cert-grid">
-            <div class="cert-card">
-                <h4>Google Developer Student Club (GDSC)</h4>
-                <p class="cert-desc">Core Team Member · Issued 2024</p>
-                <a href="/Certificates/GDSC core team.pdf" target="_blank" class="btn">View Credential</a>
-            </div>
-
-            <div class="cert-card">
-                <h4>CodeAlpha Internship Certificate</h4>
-                <p class="cert-desc">AI & NLP Projects · Issued 2026</p>
-                <a href="/Certificates" class="btn">Details</a>
-            </div>
-        </div>
-    </section>
-
-
- 
-<hr>
-
-    <section id="endorsements">
-        <h2 class="section-title">📢 Endorsements</h2>
-        <p class="projects-subtitle">Feedback from mentors and colleagues</p>
-
-        <div class="endorsement-grid">
-            <div class="endorsement-card">
-                <div class="endorsement-header">
-                    <img src="/image/codealpha_logo.jpg" alt="CodeAlpha" class="endorsement-logo">
-                    <p class="endorsement-author">Supervisor, CodeAlpha Internship</p>
-                </div>
-                <p class="endorsement-quote">
-                    “Nayroz demonstrated exceptional skill in AI and computer vision projects, delivering results ahead of schedule.”
-                </p>
-            </div>
-
-            <div class="endorsement-card">
-                <div class="endorsement-header">
-                    <img src="/image/TNC.jpg" alt="TNC Group" class="endorsement-logo">
-                    <p class="endorsement-author">Manager, TNC Group Companies</p>
-                </div>
-                <p class="endorsement-quote">
-                    “His ability to learn quickly and apply tools like AutoCAD and Python made him a valuable contributor to our team.”
-                </p>
-            </div>
-        </div>
-    </section>
-
-    -->
-
-    <hr>
-    <hr >
-    <hr >
-
-    <div id="contact" class="footer-contact">
-
-        <div class="footer-links">
-
-            <a href="mailto:nayrozshe91@gmail.com">
-                📧 Email
-            </a>
-
-            <a href="https://www.linkedin.com/in/nayroz-abdalall-958972251/" target="_blank">
-                💼 LinkedIn
-            </a>
-
-            <a href="https://github.com/nayrozsherif5-tech" target="_blank">
-                💻 GitHub
-            </a>
-
-            <a href="tel:+05521856775">
-                              📱 Phone
-                              
-            </a>
-
-        </div>
-
-
-        <footer class="footer">
-            <p>© 2026 Nayroz Abdalall</p>
-            <p>Computer Engineering Student</p>
-        </footer>
+        <p>
+            Technologies and engineering tools I use across software,
+            AI, and development projects.
+        </p>
 
     </div>
+
+    <div class="skills-grid">
+
+        @foreach (var skill in Model.Skills)
+        {
+            <span class="skill-item">
+                @skill.Name
+            </span>
+        }
+
+    </div>
+
+</section>
+  
+<section class="languages-section">
+
+    <div class="languages-heading">
+
+        <span class="section-kicker">
+            LANGUAGES
+        </span>
+
+        <h2>Communication</h2>
+
+        <p>
+            Languages I use across academic,
+            professional, and everyday environments.
+        </p>
+
+    </div>
+
+
+    <div class="languages-grid">
+
+        <div class="language-card">
+            <span class="language-code">AR</span>
+
+            <div>
+                <h3>Arabic</h3>
+                <p>Native</p>
+            </div>
+        </div>
+
+
+        <div class="language-card">
+            <span class="language-code">EN</span>
+
+            <div>
+                <h3>English</h3>
+                <p>Professional</p>
+            </div>
+        </div>
+
+
+        <div class="language-card">
+            <span class="language-code">TR</span>
+
+            <div>
+                <h3>Turkish</h3>
+                <p>Fluent</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="testimonials-section">
+
+    <div class="testimonials-heading">
+
+        <span class="section-kicker">
+            TESTIMONIALS
+        </span>
+
+        <h2>Professional feedback</h2>
+
+        <p>
+            Feedback and references from my internship experiences.
+        </p>
+
+    </div>
+
+
+    <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+
+            <div class="testimonial-header">
+
+                <img src="/image/codealpha_logo.jpg"
+                     alt="CodeAlpha Logo"
+                     class="testimonial-logo" />
+
+                <div>
+                    <h4>CodeAlpha Internship Supervisor</h4>
+                    <span>Artificial Intelligence Internship</span>
+                </div>
+
+            </div>
+
+            <p class="testimonial-quote">
+                “Nayroz demonstrated exceptional skill in AI and
+                computer vision projects, delivering results ahead
+                of schedule.”
+            </p>
+
+        </div>
+
+
+        <div class="testimonial-card">
+
+            <div class="testimonial-header">
+
+                <img src="/image/TNC.jpg"
+                     alt="TNC Group Logo"
+                     class="testimonial-logo" />
+
+                <div>
+                    <h4>TNC Group Companies</h4>
+                    <span>Internship Reference</span>
+                </div>
+
+            </div>
+
+            <p class="testimonial-quote">
+                “Her ability to learn quickly and apply tools like
+                AutoCAD and Python made her a valuable contributor
+                to our team.”
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div id="contact" class="portfolio-footer">
+
+    <div class="portfolio-footer-inner">
+
+        <div class="footer-identity">
+
+            <h3>Nayroz Abdalall</h3>
+
+            <p>
+                Computer Engineering Student
+            </p>
+
+        </div>
+
+
+        <div class="footer-socials">
+
+            <a href="mailto:nayrozshe91@gmail.com">
+                Email
+            </a>
+
+            <a href="https://www.linkedin.com/in/nayroz-abdalall-958972251/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/nayrozsherif5-tech"
+               target="_blank">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        © 2026 Nayroz Abdalall
+    </div>
+
+</div>
 
   

@@ -1,47 +1,92 @@
 ﻿@page
 @model MyFirstWebsite.Pages.CertificatesModel
+
 @{
     ViewData["Title"] = "Certificates";
 }
 
-<h1>🏆 Professional Certifications</h1>
+<div class="certificates-page">
+
+    <!-- Heading -->
+    <div class="certificates-heading">
+
+        <span class="section-kicker">
+            CERTIFICATIONS
+        </span>
+
+        <h1>
+            Professional certifications
+        </h1>
+
+        <p>
+            Certifications, internships, and training programs
+            that reflect my technical and professional development.
+        </p>
+
+    </div>
 
 
-
-@if (Model.Certificates.Count > 0)
-{
-    @foreach (var certificate in Model.Certificates)
+    @if (Model.Certificates.Count > 0)
     {
-        <div class="card">
+        <div class="certificates-grid">
 
-            <h3>@certificate.Title</h3>
-
-            <p class="issuer">
-                Issued by <strong>@certificate.Organization</strong>
-                • @certificate.Date.Year
-            </p>
-
-            <p>
-                @certificate.Description
-            </p>
-
-            @if (!string.IsNullOrWhiteSpace(certificate.CertificateLink))
+            @foreach (var certificate in Model.Certificates)
             {
-                <a class="btn"
-                   href="@certificate.CertificateLink"
-                   target="_blank">
-                    📄 View Credential
-                </a>
-            }
-            else if (!string.IsNullOrWhiteSpace(certificate.ImagePath))
-            {
-                <a class="btn"
-                   href="@certificate.ImagePath"
-                   target="_blank">
-                    📄 View Credential
-                </a>
+                <div class="certificate-modern-card">
+
+                    <div class="certificate-content">
+
+                        <span class="certificate-label">
+                            CERTIFICATE
+                        </span>
+
+                        <h3>
+                            @certificate.Title
+                        </h3>
+
+                        <p class="certificate-issuer">
+                            @certificate.Organization
+                            <span>•</span>
+                            @certificate.Date.Year
+                        </p>
+
+                        <p class="certificate-description">
+                            @certificate.Description
+                        </p>
+
+                    </div>
+
+
+                    <div class="certificate-action">
+
+                        @if (!string.IsNullOrWhiteSpace(certificate.CertificateLink))
+                        {
+                            <a href="@certificate.CertificateLink"
+                               target="_blank"
+                               class="detail-primary-btn">
+
+                                View Credential →
+
+                            </a>
+                        }
+
+                        else if (!string.IsNullOrWhiteSpace(certificate.ImagePath))
+                        {
+                            <a href="@certificate.ImagePath"
+                               target="_blank"
+                               class="detail-primary-btn">
+
+                                View Credential →
+
+                            </a>
+                        }
+
+                    </div>
+
+                </div>
             }
 
         </div>
     }
-}
+
+</div>

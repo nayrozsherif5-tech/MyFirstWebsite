@@ -4,247 +4,297 @@
     ViewData["Title"] = "Projects";
 }
 
-<div class="projects-container">
+<div class="projects-container projects-page">
 
-    <h1 class="page-title">🚀 My Projects</h1>
-    <p class="projects-subtitle">
-        A collection of AI, Computer Vision, and Web Development projects.
-    </p>
+    <div class="projects-page-heading">
+
+        <span class="section-kicker">PROJECTS</span>
+
+        <h1>Selected work</h1>
+
+        <p>
+            A collection of Artificial Intelligence, Computer Vision,
+            Engineering, and Web Development projects.
+        </p>
+
+    </div>
 
     <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="ai">AI</button>
-        <button class="filter-btn" data-filter="cv">Computer Vision</button>
-        <button class="filter-btn" data-filter="eng">Engineering</button>
-    </div>
-    <!-- 1 project chatbot -->
 
-    <div class="project-card visible" data-category="ai">
+        <button class="filter-btn active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter-btn" data-filter="ai">
+            AI
+        </button>
+
+        <button class="filter-btn" data-filter="cv">
+            Computer Vision
+        </button>
+
+        <button class="filter-btn" data-filter="web">
+            Web Development
+        </button>
+
+        <button class="filter-btn" data-filter="eng">
+            Engineering
+        </button>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+        <!-- 1 - AI FAQ Chatbot -->
+
+        <div class="project-card" data-category="ai">
+
             <img src="/image/FaqChatbot.png"
-             class="project-image"
-             alt="AI FAQ Chatbot Screenshot">
+                 class="project-image"
+                 alt="AI FAQ Chatbot Screenshot" />
 
+            <h3>🤖 AI FAQ Chatbot</h3>
 
-        <h3>🤖 AI FAQ Chatbot</h3>
+            <p class="project-type">
+                Artificial Intelligence Project
+            </p>
 
-        <p class="project-type">
-            Artificial Intelligence Project
-        </p>
+            <div class="project-tags">
+                <span class="tech">Python</span>
+                <span class="tech">NLP</span>
+                <span class="tech">Scikit-Learn</span>
+            </div>
 
-        <div class="project-tags">
-            <span class="tech">Python</span>
-            <span class="tech">NLP</span>
-            <span class="tech">Scikit-Learn</span>
-        </div>
+            <p class="project-description">
+                Developed an intelligent FAQ chatbot using Natural
+                Language Processing and cosine similarity to provide
+                relevant responses to user questions.
+            </p>
 
-        <p class="project-description">
-            Developed an intelligent FAQ chatbot using Natural
-            Language Processing and cosine similarity to provide
-            relevant responses to user questions.
-        </p>
+            <div class="project-buttons">
 
-        <div class="project-buttons">
+                <a class="btn"
+                   href="https://github.com/nayrozsherif5-tech/CodeAlpha_ChatbotFAQ"
+                   target="_blank">
+                    View Code
+                </a>
 
-            <a class="btn"
-               href="https://github.com/nayrozsherif5-tech/CodeAlpha_ChatbotFAQ"
-               target="_blank">
-                View Code
-            </a>
+                <a class="btn"
+                   asp-page="/FaqChatbot">
+                    Project Details
+                </a>
 
-            <a class="btn" asp-page="/FaqChatbot">
-                Project Details
-            </a>
-
-        </div>
-    </div>
-    <!-- 2 project YOLO -->
-
-    <div class="project-card" data-category="cv">
-
-        <img src="/image/ObjectDetection.png"
-             alt="Object Detection and Tracking"
-             class="project-image" />
-
-        <h3>👁 YOLO Object Detection & Tracking</h3>
-
-        <p class="project-type">
-            Computer Vision Project
-        </p>
-        
-        <div class="project-tags">
-            <span class="tech">Python</span>
-            <span class="tech">OpenCV</span>
-            <span class="tech">YOLO</span>
-            <span class="tech">Deep SORT</span>
-        </div>
-
-        <p class="project-description">
-            Developed a real-time object detection and tracking system
-            using YOLO and OpenCV. The application detects objects from
-            video streams and tracks them across frames using object
-            tracking algorithms.
-        </p>
-
-        <div class="project-buttons">
-
-
-            <a class="btn"
-               href="https://github.com/nayrozsherif5-tech/CodeAlpha_ObjectDetectionTracking"
-               target="_blank">
-                View Code
-            </a>
-
-            <a class="btn" asp-page="/YoloProject" >
-                Project Details
-            </a>
+            </div>
 
         </div>
 
-    </div>
 
+        <!-- 2 - YOLO -->
 
-    <!-- 3 project UAV -->
+        <div class="project-card" data-category="cv">
 
-    <div class="project-card" data-category="eng">
+            <img src="/image/ObjectDetection.png"
+                 alt="YOLO Object Detection and Tracking"
+                 class="project-image" />
 
-        <img src="/image/SwarmUAV.png"
-             alt="Object Detection and Tracking"
-             class="project-image" />
+            <h3>👁 YOLO Object Detection & Tracking</h3>
 
-        <h3>🚁 Swarm UAV Project</h3>
-        
-        <p class="project-type">
-            Aerospace Engineering Project
-        </p>
+            <p class="project-type">
+                Computer Vision Project
+            </p>
 
-        <div class="project-tags">
-            <span class="tech">Fusion 360</span>
-            <span class="tech">UAV Design</span>
-         
+            <div class="project-tags">
+                <span class="tech">Python</span>
+                <span class="tech">OpenCV</span>
+                <span class="tech">YOLO</span>
+                <span class="tech">Deep SORT</span>
+            </div>
+
+            <p class="project-description">
+                Developed a real-time object detection and tracking system
+                using YOLO and OpenCV. The application detects objects from
+                video streams and tracks them across frames using object
+                tracking algorithms.
+            </p>
+
+            <div class="project-buttons">
+
+                <a class="btn"
+                   href="https://github.com/nayrozsherif5-tech/CodeAlpha_ObjectDetectionTracking"
+                   target="_blank">
+                    View Code
+                </a>
+
+                <a class="btn"
+                   asp-page="/YoloProject">
+                    Project Details
+                </a>
+
+            </div>
+
         </div>
 
-        <p class="project-description">
-            Designed two drone frames using Fusion 360 with a focus on
-            aerodynamic efficiency and structural integrity as part of
-            the Swarm UAV team.
-        </p>
 
-        <div class="project-buttons">
+        <!-- 3 - UAV -->
+
+        <div class="project-card" data-category="eng">
+
+            <img src="/image/SwarmUAV.png"
+                 alt="Swarm UAV Project"
+                 class="project-image" />
+
+            <h3>🚁 Swarm UAV Project</h3>
+
+            <p class="project-type">
+                Aerospace Engineering Project
+            </p>
+
+            <div class="project-tags">
+                <span class="tech">Fusion 360</span>
+                <span class="tech">UAV Design</span>
+            </div>
+
+            <p class="project-description">
+                Designed two drone frames using Fusion 360 with a focus on
+                aerodynamic efficiency and structural integrity as part of
+                the Swarm UAV team.
+            </p>
+
+            <div class="project-buttons">
+
+                <a class="btn"
+                   asp-page="/UavProject">
+                    Project Details
+                </a>
+
+            </div>
+
+        </div>
 
 
-            <a class="btn" asp-page="/UavProject">
-                Project Details
-            </a>
+        <!-- 4 - Portfolio Website -->
+
+        <div class="project-card" data-category="web">
+
+            <img src="/image/PortfolioWebsite.png"
+                 alt="Personal Portfolio Website"
+                 class="project-image" />
+
+            <h3>🌐 Personal Portfolio Website</h3>
+
+            <p class="project-type">
+                Web Development Project
+            </p>
+
+            <div class="project-tags">
+                <span class="tech">ASP.NET Core</span>
+                <span class="tech">Razor Pages</span>
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">Bootstrap</span>
+            </div>
+
+            <p class="project-description">
+                Designed and developed a responsive personal portfolio website
+                to showcase projects, certifications, references, technical
+                skills, internships, and professional experience using
+                ASP.NET Core Razor Pages.
+            </p>
+
+        </div>
+
+
+        <!-- 5 - Technical Training -->
+
+        <div class="project-card" data-category="eng">
+
+            <img src="/image/technical.png"
+                 alt="Technical Design and Analysis Projects"
+                 class="project-image" />
+
+            <h3>🏢 Technical Design & Analysis Projects</h3>
+
+            <p class="project-type">
+                Technical Training Project
+            </p>
+
+            <div class="project-tags">
+                <span class="tech">Excel</span>
+                <span class="tech">Python</span>
+                <span class="tech">AutoCAD</span>
+                <span class="tech">Blender</span>
+            </div>
+
+            <p class="project-description">
+                Completed practical engineering and technical projects,
+                including Excel data analysis, Python programming
+                fundamentals, 3D room design in AutoCAD, and
+                3D environment modeling in Blender.
+            </p>
+
+            <div class="project-buttons">
+
+                <a class="btn"
+                   asp-page="/InformationTechnologies">
+                    Project Details
+                </a>
+
+            </div>
 
         </div>
 
     </div>
 
-    <!-- 4 project My Website -->
-
-    <div class="project-card" data-category="eng">
-
-        <img src="/image/PortfolioWebsite.png"
-             alt="Technical Training Project"
-             class="project-image" />
-        <h3>🌐 Personal Portfolio Website</h3>
-
-        <p class="project-type">
-            Web Development Project
-        </p>
-
-        <div class="project-tags">
-            <span class="tech">ASP.NET Core</span>
-            <span class="tech">Razor Pages</span>
-            <span class="tech">HTML</span>
-            <span class="tech">CSS</span>
-            <span class="tech">Bootstrap</span>
-        </div>
-
-        <p class="project-description">
-            Designed and developed a responsive personal portfolio website
-            to showcase projects, certifications, references, technical
-            skills, internships, and professional experience using
-            ASP.NET Core Razor Pages.
-        </p>
-
-
-    </div>
-
-    <!-- 5 project Traing -->
-
-    <div class="project-card" data-category="eng">
-
-        <img src="/image/technical.png"
-             alt="Technical Training Project"
-             class="project-image" />
-
-        <h3>🏢 Technical Design & Analysis Projects</h3>
-
-    <p class="project-type">
-        Technical Training Project
-    </p>
-
-    <div class="project-tags">
-        <span class="tech">Excel</span>
-        <span class="tech">Python</span>
-        <span class="tech">AutoCAD</span>
-        <span class="tech">Blender</span>
-    </div>
-
-    <p class="project-description">
-            Completed practical engineering and technical projects,
-            including Excel data analysis, Python programming
-            fundamentals, 3D room design in AutoCAD, and
-            3D environment modeling in Blender.
-    </p>
-    <div class="project-buttons">
-
-
-            <a class="btn" asp-page="/InformationTechnologies">
-            Project Details
-        </a>
-
-    </div>
-    </div>
-
-   
 </div>
 
+
 @section Scripts {
+
     <script>
-        document.addEventListener("scroll", function() {
-            document.querySelectorAll(".project-card").forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    el.classList.add("visible");
-                }
-            });
-        });
-    </script>
-}
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
+        document.addEventListener("DOMContentLoaded", () => {
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+            const filterButtons =
+                document.querySelectorAll(".filter-btn");
 
-                const filter = button.dataset.filter;
+            const projectCards =
+                document.querySelectorAll(".project-card");
 
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
+
+            filterButtons.forEach(button => {
+
+                button.addEventListener("click", () => {
+
+                    filterButtons.forEach(btn =>
+                        btn.classList.remove("active")
+                    );
+
+                    button.classList.add("active");
+
+                    const filter = button.dataset.filter;
+
+
+                    projectCards.forEach(card => {
+
+                        if (
+                            filter === "all" ||
+                            card.dataset.category === filter
+                        ) {
+                            card.style.display = "";
+                        }
+                        else {
+                            card.style.display = "none";
+                        }
+
+                    });
+
                 });
-            });
-        });
-    });
-</script>
 
+            });
+
+        });
+
+    </script>
+
+}
