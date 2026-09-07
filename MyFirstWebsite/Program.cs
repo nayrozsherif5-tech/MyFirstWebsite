@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using MyFirstWebsite.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.StaticFiles;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +28,16 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
+var provider = new FileExtensionContentTypeProvider();
+
+provider.Mappings[".blend"] = "application/octet-stream";
+provider.Mappings[".dwg"] = "application/octet-stream";
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    ContentTypeProvider = provider
+});
 
 app.UseRouting();
 
