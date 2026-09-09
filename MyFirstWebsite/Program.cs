@@ -7,7 +7,21 @@ using Microsoft.AspNetCore.StaticFiles;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AuthorizeFolder("/Admin", "AdminOnly");
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+
+        policy.RequireAssertion(context =>
+            context.User.Identity?.Name == "ADMIN_EMAIL_REMOVED");
+    });
+});
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -41,7 +55,21 @@ app.UseStaticFiles(new StaticFileOptions
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path.StartsWithSegments("/Identity/Account/Register"))
+    {
+        context.Response.StatusCode = 404;
+        return;
+    }
+
+    await next();
+});
+
 
 app.MapRazorPages();
 

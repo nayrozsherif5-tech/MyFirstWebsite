@@ -28,20 +28,25 @@ namespace MyFirstWebsite.Pages
             ===================================================== */
 
             var order = new List<string>
-            {
-                "C",
-                "C++",
-                "C#",
-                "Python",
-                "HTML",
-                "CSS",
-                "JavaScript",
-                "MATLAB",
-                "Fusion 360",
-                "AutoCAD",
-                "Blender",
-                "ASP.NET"
-            };
+{
+                    "Python",
+                    "C#",
+                    "C++",
+                    "C",
+                    "JavaScript",
+                    "HTML",
+                    "CSS",
+                    "SQL",
+                    "ASP.NET Core",
+                    "Razor Pages",
+                    "Entity Framework Core",
+                    "Git",
+                    "GitHub",
+                    "MATLAB",
+                    "AutoCAD",
+                    "Fusion 360",
+                    "Blender"
+};
 
             Skills = await _context.Skills.ToListAsync();
 

@@ -7499,3 +7499,11 @@ body {
             width: 100%;
         }
 }
+
+/* ==========================================================
+   HIDE IDENTITY REGISTER LINK
+========================================================== */
+
+a[href*="/Identity/Account/Register"] {
+    display: none !important;
+}
