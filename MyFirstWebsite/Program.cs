@@ -18,8 +18,10 @@ builder.Services.AddAuthorization(options =>
     {
         policy.RequireAuthenticatedUser();
 
+        var adminEmail = builder.Configuration["AdminSettings:Email"];
+
         policy.RequireAssertion(context =>
-            context.User.Identity?.Name == "ADMIN_EMAIL_REMOVED");
+            context.User.Identity?.Name == adminEmail);
     });
 });
 
