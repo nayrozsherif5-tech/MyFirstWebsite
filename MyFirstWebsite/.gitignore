@@ -1,0 +1,27 @@
+﻿# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build files
+bin/
+obj/
+
+# Local database files
+*.mdf
+*.ldf
+
+# ASP.NET / local settings
+appsettings.Development.json
+
+# User secrets
+secrets.json
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
